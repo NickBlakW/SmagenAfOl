@@ -25,18 +25,71 @@
             <div class="flex-item column">
                 <div class="product-box">
                     <div class="product-sub">
-                        <div class="left-item">
-                            <p>test</p>
+                        
+                        @forelse($beers as $beer)
+                        <div class="grid-item">
+                            <div class="card">
+                                <div class="beer">
+                                    <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="beer-name">{{ $beer->name }}</h5>
+                                    <p class="beer-text">{{ $beer->description }}</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="middle-item">
-                            <p>Test</p>
-                        </div>
+                        @empty
+                            <h2>Der er ingen øl endnu :(</h2>
 
-                        <div class="right-item">
-                            <p>test</p>
-                        </div>
+                        @endforelse
                     </div>
+
+
+{{--                        <div class="grid-item">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="beer">--}}
+{{--                                    <img class="ratio" src="{{ url('css/images/Shakespeare.jpg') }}" alt=" ">--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="beer-name">Shakespeare Stout</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="grid-item">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="beer">--}}
+{{--                                    <img class="ratio" src="{{ url('css/images/stone25.jpg') }}" alt=" ">--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="beer-name">Stone Anniversary 25</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="grid-item">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="beer">--}}
+{{--                                    <img class="ratio" src="{{ url('css/images/unpuzzled.png') }}" alt=" ">--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="beer-name">Unpuzzled Infinity</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="grid-item">--}}
+{{--                            <div class="card">--}}
+{{--                                <div class="beer">--}}
+{{--                                    <img class="ratio" src="{{ url('css/images/logo.png') }}" alt=" ">--}}
+{{--                                </div>--}}
+{{--                                <div class="card-body">--}}
+{{--                                    <h5 class="beer-name">XoCovesa Tres Leches</h5>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
                 </div>
             </div>
         </div>

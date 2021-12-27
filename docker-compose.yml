@@ -9,14 +9,19 @@ services:
         ports:
             - "3306:3306"
 
-    laravel:
-        container_name: laravel
-        restart: always
-        image: php:latest
-        volumes:
-            - "./:/app"
-        working_dir: /app
-        command: php artisan serve --host=0.0.0.0 --port=8000
-        ports:
-            - "8000:8000"
-#    php artisan migrate:fresh --seed
+#    laravel:
+#        container_name: laravel
+#        restart: always
+#        image: php:latest
+#        volumes:
+#            - "./:/app"
+#        working_dir: /app
+#        environment:
+#            MYSQL_HOST: database
+#            MYSQL_DATABASE: beerdb
+#            MYSQL_ROOT_PASSWORD: secret
+#        command: php artisan serve --host=0.0.0.0 --port=8000
+#        ports:
+#            - "8000:8000"
+#        depends_on:
+#            -   database

@@ -16,6 +16,8 @@ class CreateBeersTable extends Migration
         Schema::create('beers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description');
+            $table->string('filename');
             $table->unsignedBigInteger('type');
 
             $table->foreign('type')->references('id')->on('beer_types');

@@ -29,7 +29,7 @@ body {
 .column {
     background-color: #dae0e5;
     border: 3px solid #203c12;
-    margin-top:15px;
+    margin-top:10px;
 }
 .container {
     display: flex;
@@ -37,7 +37,6 @@ body {
 }
 .flex-item {
     flex-grow: 1;
-    margin: 5px;
 }
 .row {
     --bs-gutter-x: 1.5rem;
@@ -52,16 +51,50 @@ body {
     color: #3B3838;
     font-family: "Arial Black", sans-serif;
     font-size: 20px;
-    padding-left: 10px;
+    padding: 5px;
 }
 .product-sub {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
 }
-.left-item {
-
+.grid-item {
+    flex: 0 0 auto;
 }
-.middle-item {
-
+.card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #dae0e5;
+    border: 1px solid #203c12;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    margin: 10px;
 }
-.right-item
+.ratio {
+    position: relative;
+    object-fit: fill;
+    height: 267px;
+    width: 267px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 5px;
+}
+.beer-name {
+    font-size: 15pt;
+    margin-bottom: 0.5rem;
+}
+.beer {
+    object-fit: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 267px;
+    width: 267px;
+}
+.beer-text {
+    font-family: Monaco, sans-serif;
+    font-size: 12pt;
+}
