@@ -10,11 +10,14 @@ class BeerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $beers = Beer::all();
+
+        return view('udforsk', [
+            'beers' => $beers
+        ]);
     }
 
     /**

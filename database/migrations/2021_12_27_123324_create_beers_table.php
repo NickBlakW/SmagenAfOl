@@ -19,6 +19,7 @@ class CreateBeersTable extends Migration
             $table->string('description');
             $table->string('filename');
             $table->unsignedBigInteger('type');
+            $table->boolean('beer_of_the_day');
 
             $table->foreign('type')->references('id')->on('beer_types');
 

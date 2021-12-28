@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeerController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, 'index'])->name('home');
+Route::get('/udforsk', [BeerController::class, 'index'])->name('udforsk');

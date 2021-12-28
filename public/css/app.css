@@ -2,6 +2,7 @@ body {
     background-image: url("images/hops_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .total-view {
     width: 75%;
@@ -35,8 +36,60 @@ body {
     display: flex;
     margin-bottom: -5px;
 }
+.welcome-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.welcome-sub {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.daily-beer {
+
+}
+.announcement {
+
+}
 .flex-item {
     flex-grow: 1;
+}
+.option-box {
+    width: 100px;
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.option-link {
+    padding-bottom: 15px;
+}
+.option {
+    text-decoration: none;
+    color: #1a202c;
+}
+.welcome-column {
+
+}
+.explore-button {
+    margin-left: 10px;
+}
+.explore-card {
+    font-size: 15pt;
+    margin-bottom: 0.5rem;
+}
+.link-button {
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 22px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+.announcement-text {
+    font-family: "Times New Roman", serif;
+    font-size: 15pt;
 }
 .row {
     --bs-gutter-x: 1.5rem;
