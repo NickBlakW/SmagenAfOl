@@ -151,3 +151,31 @@ body {
     font-family: Monaco, sans-serif;
     font-size: 12pt;
 }
+.option-column {
+    margin-right: -400px;
+}
+.beer-title {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+}
+.beer-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.beer-sub {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.beer-image {
+    object-fit: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 400px;
+    width: 400px;
+}
+.information {
+
+}

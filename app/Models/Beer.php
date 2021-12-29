@@ -11,7 +11,7 @@ class Beer extends Model
 
     protected $fillable = ['name', 'type'];
 
-    public function beerType() {
-        return $this->belongsTo(Beer::class, 'type');
+    public function hasType() {
+        return $this->hasOne(Beer_type::class, 'type');
     }
 }

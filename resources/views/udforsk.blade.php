@@ -7,22 +7,15 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
 
         <!-- Scripts -->
         <script src="{{ asset("js/app.js") }}"></script>
     </head>
     <body>
         <div class="total-view">
-            <div class="main-header">
-                <a href="{{ route('home') }}">
-                    <img class="logo" src="{{ asset('css/images/logo.jpg') }}" alt=" ">
-                </a>
-                <p class="header-text">Smagen Af Øl</p>
-            </div>
+            @include('standard.header')
 
-    {{--        <div class="container column">--}}
-    {{--            @yield('options')--}}
-    {{--        </div>--}}
             <div class="container">
                 <div class="flex-item column">
                     <div class="option-box">
@@ -31,19 +24,7 @@
                         </div>
 
                         <div class="option-link">
-                            <a href="{{ route('home') }}" class="option">Tilbage</a>
-                        </div>
-
-                        <div class="option-link">
-                            <a href="{{ route('home') }}" class="option">Tilbage</a>
-                        </div>
-
-                        <div class="option-link">
-                            <a href="{{ route('home') }}" class="option">Tilbage</a>
-                        </div>
-
-                        <div class="option-link">
-                            <a href="{{ route('home') }}" class="option">Tilbage</a>
+                            <a href="{{ route('home') }}" class="option">Forside</a>
                         </div>
                     </div>
                 </div>
@@ -55,7 +36,9 @@
                             <div class="grid-item">
                                 <div class="card">
                                     <div class="beer">
-                                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                        <a href="{{ route('beer.show', [$beer->id]) }}">
+                                            <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                        </a>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="beer-name">{{ $beer->name }}</h5>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BeerController extends Controller
 {
@@ -45,11 +46,19 @@ class BeerController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Beer  $beer
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Beer $beer)
     {
-        //
+        $id = $beer->type;
+
+        $types = DB::select('SELECT type FROM beer_types
+                                WHERE id=?', [$id]);
+
+        return view('beer', [
+            'beer' => $beer,
+            'types' => $types
+        ]);
     }
 
     /**

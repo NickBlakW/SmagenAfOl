@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Controller::class, 'index'])->name('home');
 Route::get('/udforsk', [BeerController::class, 'index'])->name('udforsk');
+Route::get('/udforsk/{beer}', [BeerController::class, 'show'])->name('beer.show');
