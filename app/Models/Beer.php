@@ -14,4 +14,8 @@ class Beer extends Model
     public function hasType() {
         return $this->hasOne(Beer_type::class, 'type');
     }
+
+    public function brewery() {
+        return $this->belongsTo(Brewery::class, 'name');
+    }
 }

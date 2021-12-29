@@ -152,7 +152,7 @@ body {
     font-size: 12pt;
 }
 .option-column {
-    margin-right: -400px;
+    margin-right: auto;
 }
 .beer-title {
     color: #3B3838;
@@ -176,6 +176,14 @@ body {
     height: 400px;
     width: 400px;
 }
-.information {
-
+.description {
+    padding-top: 10px;
+}
+.beer-description {
+    font-family: "Lucida Bright", sans-serif;
+    font-size: 20px;
+}
+.beer-information {
+    font-family: "Lucida Bright", sans-serif;
+    font-size: 20px;
 }

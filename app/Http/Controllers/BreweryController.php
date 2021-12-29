@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beer;
+use App\Models\Brewery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class BeerController extends Controller
+class BreweryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,10 @@ class BeerController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index() {
-        $beers = Beer::all();
+        $breweries = Brewery::all();
 
-        return view('udforsk', [
-            'beers' => $beers
+        return view('breweries', [
+            'breweries' => $breweries
         ]);
     }
 
@@ -45,23 +46,19 @@ class BeerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Beer  $beer
+     * @param  \App\Models\Brewery $brewery
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Beer $beer)
+    public function show(Brewery $brewery)
     {
-        $type = $beer->type;
-        $brewery = $beer->brewery;
+        $id = $brewery->id;
 
-        $types = DB::select('SELECT type FROM beer_types
-                                WHERE id=?', [$type]);
-        $breweries = DB::select('SELECT name FROM breweries
-                                WHERE id=?', [$brewery]);
+        $beers = DB::select('SELECT * FROM beers
+                                   WHERE brewery=?', [$id]);
 
-        return view('beer', [
-            'beer' => $beer,
-            'types' => $types,
-            'breweries' => $breweries
+        return view('brewery', [
+            'brewery' => $brewery,
+            'beers' => $beers
         ]);
     }
 

@@ -36,18 +36,26 @@
                     </div>
 
                     <div class="">
-                        <div class="description">
-                            <p>{{ $beer->description }}</p>
-                        </div>
-
                         <div class="information">
                             @forelse($types as $type)
-                                <p>Type: {{ $type->type }}</p>
+                                <p class="beer-information">Type: </p><p>{{ $type->type }}</p>
                             @empty
                                 <p>Type: N/A</p>
                             @endforelse
 
-                            <p>Bryggeri: <b>{{  }}</b></p>
+                            @forelse($breweries as $brewery)
+                                <p class="beer-information">Bryggeri: </p>
+                                <a href="{{ route('brewery.show', [$brewery->id]) }}">
+                                    <p>{{ $brewery->name }}</p>
+                                </a>
+                            @empty
+                                <p>Bryggeri: N/A</p>
+                            @endforelse
+                        </div>
+
+                        <div class="description">
+                            <p>Beskrivelse:</p>
+                            <p class="beer-description">{{ $beer->description }}</p>
                         </div>
                     </div>
                 </div>
