@@ -64,7 +64,17 @@
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('udforsk') }}">
-                                    <button class="link-button">Udforsk butikken</button>
+                                    <button class="link-button">Se butikken</button>
+                                </a>
+                            </div>
+                            <div class="beer">
+                                <a href="{{ route('bryggeri') }}">
+                                    <img class="beer" src="{{ url('css/images/stone25.jpg') }}" alt=" ">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="{{ route('bryggeri') }}">
+                                    <button class="link-button">Se Bryggerier</button>
                                 </a>
                             </div>
                         </div>

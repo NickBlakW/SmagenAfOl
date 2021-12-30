@@ -18,12 +18,12 @@ class CreateBeersTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('filename')->nullable();
-            $table->unsignedBigInteger('type');
-            $table->unsignedBigInteger('brewery');
+            $table->string('type');
+            $table->string('brewery');
             $table->boolean('beer_of_the_day');
 
-            $table->foreign('type')->references('id')->on('beer_types');
-            $table->foreign('brewery')->references('id')->on('breweries');
+            $table->foreign('type')->references('type')->on('beer_types');
+            $table->foreign('brewery')->references('name')->on('breweries');
 
             $table->timestamps();
         });

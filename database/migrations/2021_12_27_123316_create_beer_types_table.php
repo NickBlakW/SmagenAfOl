@@ -15,8 +15,8 @@ class CreateBeerTypesTable extends Migration
     public function up()
     {
         Schema::create('beer_types', function (Blueprint $table) {
-            $table->id();
-            $table->string('type')->unique();
+//            $table->id();
+            $table->string('type')->unique()->primary();
             $table->timestamps();
         });
 
@@ -29,7 +29,7 @@ class CreateBeerTypesTable extends Migration
             ['type' => 'Sour',],
             ['type' => 'Session',],
             ['type' => 'Alcohol Free',],
-
+            ['type' => 'Table Beer',]
         ]);
     }
 

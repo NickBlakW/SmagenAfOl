@@ -23,4 +23,12 @@ class Controller extends BaseController
             'announcements' => $announcements
         ]);
     }
+
+    public function admin() {
+        return view('admin');
+    }
+
+    public function store() {
+        return null;
+    }
 }

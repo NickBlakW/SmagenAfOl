@@ -43,6 +43,14 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Rogue Brewing',
                 'description' => 'Amerikansk Bryggeri'
+            ],
+            [
+                'name' => 'O/O Brewing',
+                'description' => 'Norsk Bryggeri'
+            ],
+            [
+                'name' => 'Newbarns',
+                'description' => 'Scotsk Bryggeri'
             ]
         ]);
 
@@ -51,64 +59,88 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Unpuzzled Infinity',
                 'description' => 'En dejlig west coast IPA.',
                 'filename' => 'unpuzzled.png',
-                'type' => '3',
-                'brewery' => '1',
+                'type' => 'IPA',
+                'brewery' => 'People Like Us',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'Crossing the streams in the dark #297',
                 'description' => 'En speciel black IPA.',
                 'filename' => 'crossing.jpg',
-                'type' => '3',
-                'brewery' => '2',
+                'type' => 'IPA',
+                'brewery' => 'Beerbliotek',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'This Might Be Satire?!',
                 'description' => 'En rund og fyldig session triple IPA.',
-                'filename' => 'logo.jpg',
-                'type' => '7',
-                'brewery' => '3',
+                'filename' => '',
+                'type' => 'Stout',
+                'brewery' => 'Sudden Death Brewing Company',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'XoCovesa Tres Leches',
                 'description' => 'En dejlig stout lavet med mexicansk chokolade og vanilje.',
-                'filename' => 'logo.jpg',
-                'type' => '4',
-                'brewery' => '4',
+                'filename' => '',
+                'type' => 'Stout',
+                'brewery' => 'Stone Brewing',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'Lemon Drip',
                 'description' => 'En sour med lemon-drop chili.',
-                'filename' => 'logo.jpg',
-                'type' => '6',
-                'brewery' => '5',
+                'filename' => '',
+                'type' => 'Sour',
+                'brewery' => 'Bryg Bryg Bryg',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'Feeding Frenzy',
                 'description' => 'En fantastisk double IPA.',
-                'filename' => 'logo.jpg',
-                'type' => '3',
-                'brewery' => '6',
+                'filename' => '',
+                'type' => 'IPA',
+                'brewery' => 'Basqueland',
                 'beer_of_the_day' => '1'
             ,],
             [
                 'name' => 'Shakespeare Stout',
                 'description' => 'En fyldig stout fra Rouge Brewing.',
                 'filename' => 'Shakespeare.jpg',
-                'type' => '4',
-                'brewery' => '7',
+                'type' => 'Stout',
+                'brewery' => 'Rogue Brewing',
                 'beer_of_the_day' => '0'
             ,],
             [
                 'name' => 'Stone Anniversary 25',
                 'description' => 'Stone Brewings 25 års jubilæums triple IPA.',
                 'filename' => 'stone25.jpg',
-                'type' => '3',
-                'brewery' => '4',
+                'type' => 'IPA',
+                'brewery' => 'Stone Brewing',
+                'beer_of_the_day' => '0'
+            ],
+            [
+                'name' => 'Klavs',
+                'description' => 'Meget nørdet dessert øl.',
+                'filename' => '',
+                'type' => 'Sour',
+                'brewery' => 'Bryg Bryg Bryg',
+                'beer_of_the_day' => '0'
+            ],
+            [
+                'name' => 'Business As Usual',
+                'description' => 'En frisk og humlet IPA.',
+                'filename' => '',
+                'type' => 'IPA',
+                'brewery' => 'O/O Brewing',
+                'beer_of_the_day' => '0'
+            ],
+            [
+                'name' => 'Newbarns Table Beer',
+                'description' => 'Speciel table beer.',
+                'filename' => '',
+                'type' => 'Table Beer',
+                'brewery' => 'Newbarns',
                 'beer_of_the_day' => '0'
             ]
         ]);

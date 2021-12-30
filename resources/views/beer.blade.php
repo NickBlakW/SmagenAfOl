@@ -45,7 +45,7 @@
 
                             @forelse($breweries as $brewery)
                                 <p class="beer-information">Bryggeri: </p>
-                                <a href="{{ route('brewery.show', [$brewery->id]) }}">
+                                <a class="option" href="{{ route('brewery.show', [$brewery->id]) }}">
                                     <p>{{ $brewery->name }}</p>
                                 </a>
                             @empty

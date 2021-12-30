@@ -37,10 +37,10 @@ class BeerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//    public function store(Request $request)
+//    {
+//        //
+//    }
 
     /**
      * Display the specified resource.
@@ -54,9 +54,9 @@ class BeerController extends Controller
         $brewery = $beer->brewery;
 
         $types = DB::select('SELECT type FROM beer_types
-                                WHERE id=?', [$type]);
-        $breweries = DB::select('SELECT name FROM breweries
-                                WHERE id=?', [$brewery]);
+                                WHERE type=?', [$type]);
+        $breweries = DB::select('SELECT * FROM breweries
+                                WHERE name=?', [$brewery]);
 
         return view('beer', [
             'beer' => $beer,

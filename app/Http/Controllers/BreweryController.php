@@ -38,10 +38,10 @@ class BreweryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//    public function store(Request $request)
+//    {
+//        //
+//    }
 
     /**
      * Display the specified resource.
@@ -51,10 +51,10 @@ class BreweryController extends Controller
      */
     public function show(Brewery $brewery)
     {
-        $id = $brewery->id;
+        $name = $brewery->name;
 
         $beers = DB::select('SELECT * FROM beers
-                                   WHERE brewery=?', [$id]);
+                                   WHERE brewery=?', [$name]);
 
         return view('brewery', [
             'brewery' => $brewery,

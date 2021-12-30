@@ -21,3 +21,5 @@ Route::get('/udforsk', [BeerController::class, 'index'])->name('udforsk');
 Route::get('/udforsk/{beer}', [BeerController::class, 'show'])->name('beer.show');
 Route::get('/bryggerier', [BreweryController::class, 'index'])->name('bryggeri');
 Route::get('/bryggerier/{brewery}', [BreweryController::class, 'show'])->name('brewery.show');
+Route::get('/admin', [Controller::class, 'admin'])->name('admin');
+Route::post('/admin', [Controller::class, 'store'])->name('admin.store');

@@ -67,7 +67,7 @@ body {
 }
 .option {
     text-decoration: none;
-    color: #1a202c;
+    color: #3B3838;
 }
 .welcome-column {
 
@@ -186,4 +186,13 @@ body {
 .beer-information {
     font-family: "Lucida Bright", sans-serif;
     font-size: 20px;
+}
+.content {
+    background: #dae0e5;
+}
+.admin {
+
+}
+.admin-form {
+
 }
