@@ -17,9 +17,12 @@ class BeerImport implements ToModel
         return new Beer([
             'name' => $row[0],
             'description' => $row[1],
-            'filename' => $row[2],
-            'type' => $row[3],
-            'brewery' => $row[4]
+            'type' => $row[2],
+            'brewery' => $row[3],
+            'alc_percent' => $row[4],
+            'IBU' => $row[5],
+            'size' => $row[6],
+            'filename' => $row[7]
         ]);
     }
 }
