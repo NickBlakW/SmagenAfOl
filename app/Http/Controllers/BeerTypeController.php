@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beer_type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BeerTypeController extends Controller
 {
@@ -14,7 +15,11 @@ class BeerTypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Beer_type::all();
+
+        return view('beertypes', [
+            'beertypes' => $types
+        ]);
     }
 
     /**
@@ -33,10 +38,10 @@ class BeerTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+//    public function store(Request $request)
+//    {
+//        //
+//    }
 
     /**
      * Display the specified resource.
@@ -46,7 +51,14 @@ class BeerTypeController extends Controller
      */
     public function show(Beer_type $beer_type)
     {
-        //
+        $type = $beer_type->type;
+        $beers = DB::select(
+            'SELECT * FROM beers WHERE type=?', [$type]
+        );
+
+        return view('beertype', [
+            'beers' => $beers
+        ]);
     }
 
     /**

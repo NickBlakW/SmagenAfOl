@@ -15,12 +15,51 @@
     <div class="container">
         <div class="flex-item column">
             <h1 class="beer-title">Admin</h1>
-            <div class="admin">
-                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">
-                    @csrf
-                    <input type="file" name="filename">
-                    <input type="submit">
-                </form>
+            <div class="product-box">
+                <div class="product-sub">
+                    <div class="grid-item">
+                        <div class="card">
+                            <div class="beer">
+                                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">
+                                    @csrf
+                                    <input type="file" name="filename"><br>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="card">
+                            <div class="beer">
+                                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">
+                                    @csrf
+                                    <input type="file" name="filename"><br>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="card">
+                            <div class="beer">
+                                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">
+                                    @csrf
+                                    <input type="file" name="filename"><br>
+                                    <input type="submit">
+                                </form>
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -24,6 +24,10 @@
                 <div class="option-link">
                     <a href="{{ route('home') }}" class="option">Forside</a>
                 </div>
+
+                <div class="option-link">
+                    <a href="{{ route('bryggeri') }}" class="option">Bryggerier</a>
+                </div>
             </div>
         </div>
 
@@ -31,9 +35,11 @@
             <h1 class="beer-title">{{ $beer->name }}</h1>
             <div class="beer-box">
                 <div class="beer-sub">
-                    <div class="beer-image">
-                        <img class="beer-image" src="{{ url('css/images/'.$beer->filename) }}"  alt=" ">
-                    </div>
+                    @if($beer->filename == null)
+                        <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                    @else
+                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                    @endif
 
                     <div class="">
                         <div class="information">
@@ -51,6 +57,17 @@
                             @empty
                                 <p>Bryggeri: N/A</p>
                             @endforelse
+
+                            <p class="beer-information">Vol: {{ $beer->alc_percent }}%</p>
+
+                            @if($beer->IBU == 0)
+                                <p class="beer-information">IBU: N/A</p>
+                            @else
+                                <p class="beer-information">IBU: {{ $beer->IBU }}</p>
+                            @endif
+
+                            <p class="beer-information">Størrelse: {{ $beer->size }}</p>
+
                         </div>
 
                         <div class="description">
