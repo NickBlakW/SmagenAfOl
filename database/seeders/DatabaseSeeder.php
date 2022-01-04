@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
                 'beer_of_the_day' => '0'
             ,],
             [
-                'name' => 'Crossing the streams in the dark #297',
+                'name' => 'Crossing the streams in the dark',
                 'description' => 'En speciel black IPA.',
                 'type' => 'IPA',
                 'brewery' => 'Beerbliotek',

@@ -17,50 +17,10 @@
             @include('standard.header')
 
             <div class="container">
-                <div class="flex-item column">
-                    <div class="option-box">
-                        <div class="option-link">
-                            <a href="{{ route('home') }}" class="option">Forside</a>
-                        </div>
-
-                        <div class="option-link">
-                            <a href="{{ route('udforsk') }}" class="option">Udforsk</a>
-                        </div>
-
-                        <div class="option-link">
-                            <a href="{{ route('bryggeri') }}" class="option">Bryggerier</a>
-                        </div>
-                    </div>
-                </div>
+                @include('standard.refs')
 
                 <div class="flex-item column">
-                    <div class="product-box">
-                        <div class="product-sub">
-                            @forelse($beers as $beer)
-                            <div class="grid-item">
-                                <div class="card">
-                                    <div class="beer">
-                                        <a href="{{ route('beer.show', [$beer->id]) }}">
-                                            @if($beer->filename == null)
-                                                <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
-                                            @else
-                                                <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
-                                            @endif
-                                        </a>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="beer-name">{{ $beer->name }}</h5>
-                                        <p class="beer-text">{{ $beer->description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            @empty
-                                <h2>Der er ingen øl endnu :(</h2>
-
-                            @endforelse
-                        </div>
-                    </div>
+                    @include('standard.product')
                 </div>
             </div>
         </div>

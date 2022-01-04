@@ -53,8 +53,9 @@ class BreweryController extends Controller
     {
         $name = $brewery->name;
 
-        $beers = DB::select('SELECT * FROM beers
-                                   WHERE brewery=?', [$name]);
+        $beers = DB::select(
+            'SELECT * FROM beers WHERE brewery=?', [$name]
+        );
 
         return view('brewery', [
             'brewery' => $brewery,

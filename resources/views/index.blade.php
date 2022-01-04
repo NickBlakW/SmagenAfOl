@@ -17,18 +17,6 @@
     @include('standard.header')
 
     <div class="container">
-{{--        <div class="flex-item column welcome-column">--}}
-{{--            <div class="option-box welcome-column">--}}
-{{--                <div class="option-link">--}}
-{{--                    <a href="{{ route('home') }}" class="option">Tilbage</a>--}}
-{{--                </div>--}}
-
-{{--                <div class="option-link">--}}
-{{--                    <a href="{{ route('home') }}" class="option">Tilbage</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
         <div class="flex-item column">
             <div class="welcome-box">
                 <div class="welcome-sub">
@@ -38,9 +26,15 @@
 
                         <div class="card">
                             <div class="beer">
-                                <a href="{{ route('beer.show', [$beer->id]) }}">
-                                    <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
-                                </a>
+                                @if($beer->filename == null)
+                                    <a href="{{ route('beer.show', [$beer->id]) }}">
+                                        <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                                    </a>
+                                @else
+                                    <a href="{{ route('beer.show', [$beer->id]) }}">
+                                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                    </a>
+                                @endif
                             </div>
                             <div class="card-body">
                                 <h5 class="beer-name">{{ $beer->name }}</h5>
@@ -77,6 +71,16 @@
                                     <button class="link-button">Se Bryggerier</button>
                                 </a>
                             </div>
+                            <div class="beer">
+                                <a href="{{ route('beertypes') }}">
+                                    <img class="beer" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <a href="{{ route('beertypes') }}">
+                                    <button class="link-button">Se Øltyper</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -100,4 +104,5 @@
         </div>
     </div>
 </div>
+{{--@include('standard.credit')--}}
 </body>

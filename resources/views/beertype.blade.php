@@ -9,31 +9,15 @@
 </head>
 
 <body>
-<div class="product-box">
-    <div class="product-sub">
-        @forelse($beers as $beer)
-            <div class="grid-item">
-                <div class="card">
-                    <div class="beer">
-                        <a href="{{ route('beer.show', [$beer->id]) }}">
-                            @if($beer->filename == null)
-                                <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
-                            @else
-                                <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
-                            @endif
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="beer-name">{{ $beer->name }}</h5>
-                        <p class="beer-text">{{ $beer->description }}</p>
-                    </div>
-                </div>
-            </div>
+<div class="total-view">
+    @include('standard.header')
 
-        @empty
-            <h2>Der er ingen øl endnu :(</h2>
+    <div class="container">
+        @include('standard.refs')
 
-        @endforelse
+        <div class="flex-item column">
+            @include('standard.product')
+        </div>
     </div>
 </div>
 </body>

@@ -196,3 +196,37 @@ body {
 .admin-form {
 
 }
+.show-hide {
+    display: none;
+}
+.types-button {
+    width: 200px;
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 22px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+/*.credit {*/
+/*    */
+/*    width:75%;*/
+/*    display:flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+/*.credit-img {*/
+/*    height: 20px;*/
+/*}*/
+/*.credit-text {*/
+/*    font-family: "Arial", sans-serif;*/
+/*    font-size: 12px;*/
+/*    padding-left: 10px;*/
+/*}*/
+/*.credit-link {*/
+/*    text-decoration: none;*/
+/*    color: #dae0e5;*/
+/*}*/
+/*#clear {*/
+/*    clear:both;*/
+/*}*/

@@ -17,21 +17,7 @@
     @include('standard.header')
 
     <div class="container">
-        <div class="flex-item column">
-            <div class="option-box">
-                <div class="option-link">
-                    <a href="{{ route('home') }}" class="option">Forside</a>
-                </div>
-
-                <div class="option-link">
-                    <a href="{{ route('udforsk') }}" class="option">Udforsk</a>
-                </div>
-
-                <div class="option-link">
-                    <a href="{{ route('bryggeri') }}" class="option">Bryggerier</a>
-                </div>
-            </div>
-        </div>
+        @include('standard.refs')
 
         <div class="flex-item column">
             <div class="product-box">

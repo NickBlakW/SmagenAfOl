@@ -17,8 +17,9 @@ class BeerTypeController extends Controller
     {
         $types = Beer_type::all();
 
+
         return view('beertypes', [
-            'beertypes' => $types
+            'types' => $types
         ]);
     }
 
@@ -47,16 +48,16 @@ class BeerTypeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Beer_type  $beer_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show(Beer_type $beer_type)
+    public function show(Beer_type $type)
     {
-        $type = $beer_type->type;
         $beers = DB::select(
-            'SELECT * FROM beers WHERE type=?', [$type]
+            'SELECT * FROM beers WHERE type=?', [$type->type]
         );
 
         return view('beertype', [
+            'type' => $type,
             'beers' => $beers
         ]);
     }

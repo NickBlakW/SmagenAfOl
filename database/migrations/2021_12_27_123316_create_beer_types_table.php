@@ -15,8 +15,8 @@ class CreateBeerTypesTable extends Migration
     public function up()
     {
         Schema::create('beer_types', function (Blueprint $table) {
-//            $table->id();
-            $table->string('type')->unique()->primary();
+            $table->id();
+            $table->string('type')->unique();
             $table->timestamps();
         });
 
