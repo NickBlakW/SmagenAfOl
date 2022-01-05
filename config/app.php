@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    Maatwebsite\Excel\ExcelServiceProvider::class,
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -232,4 +234,5 @@ return [
 
     ],
 
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 ];
