@@ -1,5 +1,5 @@
-<div class="flex-item column">
-    <div class="option-box">
+<div class="flex-item column fixable">
+    <div class="option-box links" id="fixable">
         <div class="option-link">
             <a href="{{ url()->previous() }}" class="option">Tilbage</a>
         </div>

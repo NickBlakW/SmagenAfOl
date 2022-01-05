@@ -12,16 +12,12 @@ services:
 #    laravel:
 #        container_name: laravel
 #        restart: always
-#        image: php:latest
+#        build:
+#            context: docker/php
+#            dockerfile: dev.Dockerfile
 #        volumes:
 #            - "./:/app"
 #        working_dir: /app
-#        environment:
-#            MYSQL_HOST: 127.0.0.1
-#            MYSQL_DATABASE: beerdb
-#            MYSQL_ROOT_PASSWORD: secret
 #        command: php artisan serve --host=0.0.0.0 --port=8000
 #        ports:
 #            - "8000:8000"
-#        depends_on:
-#            -   database

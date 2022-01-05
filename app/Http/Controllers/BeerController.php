@@ -53,7 +53,7 @@ class BeerController extends Controller
         $type = $beer->type;
         $brewery = $beer->brewery;
 
-        $types = DB::select('SELECT type FROM beer_types
+        $types = DB::select('SELECT * FROM beer_types
                                 WHERE type=?', [$type]);
         $breweries = DB::select('SELECT * FROM breweries
                                 WHERE name=?', [$brewery]);

@@ -1,11 +1,17 @@
-require('./bootstrap');
+// require('./bootstrap');
 
-function toggle(id) {
-    let state = document.getElementById(id).style.display;
+window.onscroll = function() {
+    fixContent();
+}
 
-    if (state == 'block') {
-        document.getElementById(id).style.display = 'none';
+let div = document.getElementById("fixable");
+
+let fixed = div.offsetTop;
+
+function fixContent() {
+    if (window.pageYOffset > fixed) {
+        div.classList.add("fixed");
     } else {
-        document.getElementById(id).style.display = 'block'
+        div.classList.remove("fixed");
     }
 }

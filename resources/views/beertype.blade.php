@@ -5,7 +5,6 @@
     <link rel="icon" href="{{ url('css/images/leaf.jpg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
@@ -16,8 +15,13 @@
         @include('standard.refs')
 
         <div class="flex-item column">
-            @include('standard.product')
+            <div class="product-box">
+                @include('standard.product')
+            </div>
         </div>
     </div>
 </div>
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
