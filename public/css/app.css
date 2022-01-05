@@ -1,0 +1,263 @@
+body {
+    background-image: url("images/hops_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.total-view {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+.main-header {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36pt;
+    height: 140px;
+    border: 3px solid #203c12;
+    background-color: #dae0e5;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.logo {
+    height: 120px;
+    float:left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.header-text {
+    text-align: center;
+    font-size: 36pt;
+    color: #203c12;
+}
+.fixed-header {
+    position: fixed;
+}
+.column {
+    background-color: #dae0e5;
+    border: 3px solid #203c12;
+    margin-top:10px;
+}
+.container {
+    display: flex;
+    margin-bottom: -5px;
+}
+.welcome-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.welcome-sub {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.daily-beer {
+
+}
+.announcement {
+
+}
+.flex-item {
+    flex-grow: 1;
+}
+.fixable {
+    width: 180px;
+    flex-grow: 0;
+}
+.fixed {
+    position: fixed;
+    top: 10px;
+}
+.scrollable {
+    overflow: auto;
+}
+.option-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.option-link {
+    padding-bottom: 15px;
+}
+.option {
+    text-decoration: none;
+    color: #3B3838;
+}
+.welcome-column {
+
+}
+.explore-button {
+    margin-left: 10px;
+}
+.explore-card {
+    font-size: 15pt;
+    margin-bottom: 0.5rem;
+}
+.link-button {
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 22px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+.announcement-text {
+    font-family: "Times New Roman", serif;
+    font-size: 15pt;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x)*-.5);
+    margin-right: calc(var(--bs-gutter-x)*-.5);
+    margin-top: calc(var(--bs-gutter-y)*-1);
+}
+.product-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.product-sub {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.grid-item {
+    flex: 0 0 auto;
+}
+.card {
+    word-wrap: break-word;
+    background-clip: border-box;
+    background-color: #dae0e5;
+    border: 1px solid #203c12;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    margin: 10px;
+}
+.ratio {
+    position: relative;
+    object-fit: fill;
+    height: 267px;
+    width: 267px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 5px;
+}
+.beer-name {
+    font-size: 15pt;
+    margin-bottom: 0.5rem;
+}
+.beer {
+    object-fit: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 267px;
+    width: 267px;
+}
+.beer-text {
+    font-family: Monaco, sans-serif;
+    font-size: 12pt;
+}
+.option-column {
+    margin-right: auto;
+}
+.beer-title {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+}
+.beer-box {
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+}
+.beer-sub {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.beer-image {
+    object-fit: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 400px;
+    width: 400px;
+}
+.description {
+    padding-top: 10px;
+}
+.beer-description {
+    font-family: "Lucida Bright", sans-serif;
+    font-size: 20px;
+}
+.beer-information {
+    font-family: "Lucida Bright", sans-serif;
+    font-size: 20px;
+}
+.content {
+    background: #dae0e5;
+}
+.admin {
+
+}
+.admin-form {
+
+}
+.show-hide {
+    display: none;
+}
+.types-button {
+    width: 200px;
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 22px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+.with-border {
+    border-left: 3px solid #203c12;
+    border-bottom: 3px solid #203c12;
+    border-right: 3px solid #203c12;
+}
+.brewery-name {
+    margin-left: 50px;
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+}
+.brewery-box {
+    margin-left: 50px;
+    color: #3B3838;
+    font-family: "Arial Black", sans-serif;
+    font-size: 20px;
+}
+/*.credit {*/
+/*    */
+/*    width:75%;*/
+/*    display:flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+/*.credit-img {*/
+/*    height: 20px;*/
+/*}*/
+/*.credit-text {*/
+/*    font-family: "Arial", sans-serif;*/
+/*    font-size: 12px;*/
+/*    padding-left: 10px;*/
+/*}*/
+/*.credit-link {*/
+/*    text-decoration: none;*/
+/*    color: #dae0e5;*/
+/*}*/
+/*#clear {*/
+/*    clear:both;*/
+/*}*/
