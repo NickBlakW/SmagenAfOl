@@ -9,7 +9,16 @@ class Beer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'type'];
+    protected $fillable = [
+        'name',
+        'description',
+        'type',
+        'brewery',
+        'alc_percent',
+        'ibu',
+        'size',
+        'filename',
+    ];
 
     public function hasType() {
         return $this->hasOne(Beer_type::class, 'type');

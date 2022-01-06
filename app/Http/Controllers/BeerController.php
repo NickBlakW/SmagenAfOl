@@ -6,7 +6,7 @@ use App\Imports\BeerImport;
 use App\Models\Beer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BeerController extends Controller
 {
@@ -68,7 +68,7 @@ class BeerController extends Controller
     }
 
     public function upload() {
-        Excel::import(new BeerImport, \request()->file('file'));
+        Excel::import(new BeerImport, request()->file('file'));
 
         return back()->with('success', 'Excel accepteret!');
     }

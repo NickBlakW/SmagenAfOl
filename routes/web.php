@@ -26,7 +26,7 @@ Route::get('/bryggerier', [BreweryController::class, 'index'])->name('bryggeri')
 Route::get('/bryggerier/{brewery}', [BreweryController::class, 'show'])->name('brewery.show');
 
 Route::get('/admin', [Controller::class, 'admin'])->name('admin');
-Route::post('/admin', [Controller::class, 'store'])->name('admin.store');
+Route::post('/admin/upload', [BeerController::class, 'upload'])->name('admin.upload.beer');
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');

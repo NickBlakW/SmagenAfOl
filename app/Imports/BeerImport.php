@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\Models\Beer;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class BeerImport implements ToModel
+class BeerImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row
@@ -20,9 +21,9 @@ class BeerImport implements ToModel
             'type' => $row['type'],
             'brewery' => $row['brewery'],
             'alc_percent' => $row['alc_percent'],
-            'IBU' => $row['IBU'],
+            'ibu' => $row['ibu'],
             'size' => $row['size'],
-            'filename' => $row['filename']
+            'filename' => $row['filename'],
         ]);
     }
 }
