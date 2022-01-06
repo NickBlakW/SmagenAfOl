@@ -26,7 +26,10 @@ Route::get('/bryggerier', [BreweryController::class, 'index'])->name('bryggeri')
 Route::get('/bryggerier/{brewery}', [BreweryController::class, 'show'])->name('brewery.show');
 
 Route::get('/admin', [Controller::class, 'admin'])->name('admin');
-Route::post('/admin/upload', [BeerController::class, 'upload'])->name('admin.upload.beer');
+Route::post('/admin/type', [BeerTypeController::class, 'upload'])->name('admin.upload.type');
+Route::post('/admin/brewery', [BreweryController::class, 'upload'])->name('admin.upload.brewery');
+Route::post('/admin/beer', [BeerController::class, 'upload'])->name('admin.upload.beer');
+Route::post('admin/delete', [Controller::class, 'deleteAllData'])->name('delete');
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');

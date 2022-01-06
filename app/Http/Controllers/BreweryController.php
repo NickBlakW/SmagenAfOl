@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\BreweryImport;
 use App\Models\Beer;
 use App\Models\Brewery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BreweryController extends Controller
 {
@@ -61,6 +63,14 @@ class BreweryController extends Controller
             'brewery' => $brewery,
             'beers' => $beers
         ]);
+    }
+
+    public function upload() {
+        DB::delete('DELETE FROM breweries');
+
+        Excel::import(new BreweryImport, request()->file('file'));
+
+        return back()->with('success', 'Bryggerier opdateret!');
     }
 
     /**

@@ -239,6 +239,12 @@ body {
     font-family: "Arial Black", sans-serif;
     font-size: 20px;
 }
+.upload {
+    height: 100px;
+}
+.small-margin {
+    margin-bottom: 10px;
+}
 /*.credit {*/
 /*    */
 /*    width:75%;*/

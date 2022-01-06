@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\Beer_typeImport;
 use App\Models\Beer_type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BeerTypeController extends Controller
 {
@@ -60,6 +62,14 @@ class BeerTypeController extends Controller
             'type' => $type,
             'beers' => $beers
         ]);
+    }
+
+    public function upload() {
+        DB::delete('DELETE FROM beer_types');
+
+        Excel::import(new Beer_typeImport, request()->file('file'));
+
+        return back()->with('success', 'Øltyper opdateret');
     }
 
     /**

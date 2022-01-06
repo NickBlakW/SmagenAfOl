@@ -18,6 +18,7 @@ class Beer extends Model
         'ibu',
         'size',
         'filename',
+        'beer_of_the_day',
     ];
 
     public function hasType() {
@@ -25,6 +26,6 @@ class Beer extends Model
     }
 
     public function brewery() {
-        return $this->belongsTo(Brewery::class, 'name');
+        return $this->belongsTo(Brewery::class, 'brewery');
     }
 }

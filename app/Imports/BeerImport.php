@@ -3,10 +3,11 @@
 namespace App\Imports;
 
 use App\Models\Beer;
+use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class BeerImport implements ToModel, WithHeadingRow
+class BeerImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     /**
     * @param array $row
@@ -24,6 +25,8 @@ class BeerImport implements ToModel, WithHeadingRow
             'ibu' => $row['ibu'],
             'size' => $row['size'],
             'filename' => $row['filename'],
+            'beer_of_the_day' => $row['beer_of_the_day'],
         ]);
+
     }
 }

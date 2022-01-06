@@ -12,6 +12,6 @@ class Beer_type extends Model
     protected $fillable = ['type'];
 
     public function beer() {
-        return $this->belongsTo('beer');
+        return $this->belongsTo('beers');
     }
 }

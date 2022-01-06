@@ -20,10 +20,10 @@ class CreateBeersTable extends Migration
             $table->string('type');
             $table->string('brewery');
             $table->double('alc_percent');
-            $table->integer('IBU')->unsigned()->nullable();
+            $table->integer('ibu')->unsigned()->nullable();
             $table->integer('size');
             $table->string('filename')->nullable();
-            $table->boolean('beer_of_the_day')->default(0);
+            $table->boolean('beer_of_the_day');
 
             $table->foreign('type')->references('type')->on('beer_types');
             $table->foreign('brewery')->references('name')->on('breweries');

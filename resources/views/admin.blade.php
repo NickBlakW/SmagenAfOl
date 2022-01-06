@@ -22,18 +22,40 @@
             <div class="product-box">
                 <div class="product-sub">
                     <div class="grid-item">
-                        <div class="card">
-                            <div class="beer">
-                                <form class="admin-form" action="{{ route('admin.upload.beer') }}" enctype="multipart/form-data" method="POST">
+                        <div>
+                            <div class="upload">
+                                <h3 class="small-margin">Opdater bryggerier</h3>
+                                <form class="admin-form" action="{{ route('admin.upload.brewery') }}" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     <input type="file" name="file"><br>
                                     <input type="submit">
                                 </form>
                             </div>
-                            <div class="card-body">
 
+                            <div class="upload">
+                                <h3 class="small-margin">Opdater øltyper</h3>
+                                <form class="admin-form" action="{{ route('admin.upload.type') }}" enctype="multipart/form-data" method="POST">
+                                    @csrf
+                                    <input type="file" name="file"><br>
+                                    <input type="submit">
+                                </form>
                             </div>
                         </div>
+
+                        <div class="upload">
+                            <h3 class="small-margin">Opdater øl</h3>
+                            <form class="admin-form" action="{{ route('admin.upload.beer') }}" enctype="multipart/form-data" method="POST">
+                                @csrf
+                                <input type="file" name="file"><br>
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <form action="{{ route('delete') }}" method="POST">
+                            @csrf
+                            <button type="submit">Slet al data</button>
+                        </form>
                     </div>
 {{--                    <div class="grid-item">--}}
 {{--                        <div class="card">--}}

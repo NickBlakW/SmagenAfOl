@@ -31,4 +31,12 @@ class Controller extends BaseController
     public function store() {
         return null;
     }
+
+    public function deleteAllData() {
+        DB::delete('DELETE FROM beers');
+        DB::delete('DELETE FROM beer_types');
+        DB::delete('DELETE FROM breweries');
+
+        return back()->with('success', 'Al Data slettet!');
+    }
 }
