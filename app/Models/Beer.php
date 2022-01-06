@@ -17,7 +17,7 @@ class Beer extends Model
         'alc_percent',
         'ibu',
         'size',
-        'filename',
+        'image',
         'beer_of_the_day',
     ];
 

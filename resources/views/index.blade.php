@@ -19,17 +19,17 @@
                 <div class="welcome-sub">
                     @forelse($beers as $beer)
                     <div class="daily-beer">
-                        <h2>Dagens Øl</h2>
+                        <h2 class="small-margin-left">Dagens Øl</h2>
 
                         <div class="card">
                             <div class="beer">
-                                @if($beer->filename == null)
+                                @if($beer->image == null)
                                     <a href="{{ route('beer.show', [$beer->id]) }}">
-                                        <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                                        <img class="ratio" src="{{ url('images/logo.jpg') }}" alt=" ">
                                     </a>
                                 @else
                                     <a href="{{ route('beer.show', [$beer->id]) }}">
-                                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                        <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
                                     </a>
                                 @endif
                             </div>
@@ -46,11 +46,11 @@
                     @endforelse
 
                     <div class="explore-button">
-                        <h2>Udforsk</h2>
+                        <h2 class="small-margin-left">Udforsk</h2>
                         <div class="card">
                             <div class="beer">
                                 <a href="{{ route('udforsk') }}">
-                                    <img class="beer" src="{{ url('css/images/Shakespeare.jpg') }}" alt=" ">
+                                    <img class="beer" src="{{ url('images/Shakespeare.jpg') }}" alt=" ">
                                 </a>
                             </div>
                             <div class="card-body">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="beer">
                                 <a href="{{ route('bryggeri') }}">
-                                    <img class="beer" src="{{ url('css/images/stone25.jpg') }}" alt=" ">
+                                    <img class="beer" src="{{ url('images/stone25.jpg') }}" alt=" ">
                                 </a>
                             </div>
                             <div class="card-body">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="beer">
                                 <a href="{{ route('beertypes') }}">
-                                    <img class="beer" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                                    <img class="beer" src="{{ url('images/logo.jpg') }}" alt=" ">
                                 </a>
                             </div>
                             <div class="card-body">
@@ -81,9 +81,9 @@
                         </div>
                     </div>
 
-                    <div class="announcement">
-                        <h2>Sidste nyt</h2>
-                        <div class="card">
+                    <div>
+                        <h2 class="small-margin-left">Sidste nyt</h2>
+                        <div class="card announcement">
                             <div class="announcement-text">
                                 @forelse($announcements as $announcement)
                                     <label>

@@ -20,10 +20,10 @@
             <h1 class="beer-title">{{ $beer->name }}</h1>
             <div class="beer-box">
                 <div class="beer-sub">
-                    @if($beer->filename == null)
+                    @if($beer->image == null)
                         <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
                     @else
-                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                        <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
                     @endif
 
                     <div class="">

@@ -24,9 +24,8 @@ class BeerImport implements ToModel, WithHeadingRow, SkipsEmptyRows
             'alc_percent' => $row['alc_percent'],
             'ibu' => $row['ibu'],
             'size' => $row['size'],
-            'filename' => $row['filename'],
+            'image' => $row['image'],
             'beer_of_the_day' => $row['beer_of_the_day'],
         ]);
-
     }
 }

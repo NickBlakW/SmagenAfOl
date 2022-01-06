@@ -13,7 +13,13 @@
     @include('standard.header')
 
     <div class="container">
-        <div class="flex-item column">
+        <div class="flex-item column admin">
+            <div class="grid-item">
+                <form action="{{ route('admin.delete') }}" method="POST">
+                    @csrf
+                    <button class="delete" type="submit">Slet al data</button>
+                </form>
+            </div>
             <h1 class="beer-title">Admin</h1>
 
             @if(session()->has('success'))
@@ -27,8 +33,9 @@
                                 <h3 class="small-margin">Opdater bryggerier</h3>
                                 <form class="admin-form" action="{{ route('admin.upload.brewery') }}" enctype="multipart/form-data" method="POST">
                                     @csrf
-                                    <input type="file" name="file"><br>
-                                    <input type="submit">
+                                    <label for="brewery" class="uploadable">Send bryggerier</label>
+                                    <input type="file" id="brewery" name="file"><br>
+                                    <input class="submission" type="submit">
                                 </form>
                             </div>
 
@@ -36,8 +43,9 @@
                                 <h3 class="small-margin">Opdater øltyper</h3>
                                 <form class="admin-form" action="{{ route('admin.upload.type') }}" enctype="multipart/form-data" method="POST">
                                     @csrf
-                                    <input type="file" name="file"><br>
-                                    <input type="submit">
+                                    <label for="types" class="uploadable">Send øltyper</label>
+                                    <input type="file" id="types" name="file"><br>
+                                    <input class="submission" type="submit">
                                 </form>
                             </div>
                         </div>
@@ -46,45 +54,40 @@
                             <h3 class="small-margin">Opdater øl</h3>
                             <form class="admin-form" action="{{ route('admin.upload.beer') }}" enctype="multipart/form-data" method="POST">
                                 @csrf
-                                <input type="file" name="file"><br>
-                                <input type="submit">
+                                <label for="beer" class="uploadable">Send øl</label>
+                                <input type="file" id="beer" name="file"><br>
+                                <input class="submission" type="submit" value="Opdater øl">
                             </form>
                         </div>
                     </div>
-                    <div>
-                        <form action="{{ route('delete') }}" method="POST">
-                            @csrf
-                            <button type="submit">Slet al data</button>
-                        </form>
+
+                    <div class="grid-item">
+                        <div>
+                            <div class="upload">
+                                <h3 class="small-margin">Upload billede</h3>
+                                <form class="admin-form" action="{{ route('admin.image') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <label for="image" class="uploadable">Send billede</label>
+                                    <input type="file" id="image" name="image"><br>
+                                    <input class="submission" type="submit" value="Gem billede">
+                                </form>
+                            </div>
+                        </div>
                     </div>
-{{--                    <div class="grid-item">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="beer">--}}
-{{--                                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">--}}
-{{--                                    @csrf--}}
-{{--                                    <input type="file" name="filename"><br>--}}
-{{--                                    <input type="submit">--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
 
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="grid-item">--}}
-{{--                        <div class="card">--}}
-{{--                            <div class="beer">--}}
-{{--                                <form class="admin-form" action="{{ route('admin.store') }}" method="POST">--}}
-{{--                                    @csrf--}}
-{{--                                    <input type="file" name="filename"><br>--}}
-{{--                                    <input type="submit">--}}
-{{--                                </form>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="grid-item">
+                        <div>
+                            <div class="upload">
+                                <h3 class="small-margin">Opret nyhed</h3>
+                                <form class="admin-form" action="{{ route('admin.announcement') }}" method="POST">
+                                    @csrf
+                                    <label for="announcement"></label>
+                                    <input class="textfield" id="announcement" type="text" name="announcement"><br>
+                                    <input class="submission" type="submit" value="Opret nyhed">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

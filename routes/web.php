@@ -29,7 +29,9 @@ Route::get('/admin', [Controller::class, 'admin'])->name('admin');
 Route::post('/admin/type', [BeerTypeController::class, 'upload'])->name('admin.upload.type');
 Route::post('/admin/brewery', [BreweryController::class, 'upload'])->name('admin.upload.brewery');
 Route::post('/admin/beer', [BeerController::class, 'upload'])->name('admin.upload.beer');
-Route::post('admin/delete', [Controller::class, 'deleteAllData'])->name('delete');
+Route::post('admin/delete', [Controller::class, 'deleteAllData'])->name('admin.delete');
+Route::post('/admin/upload',[Controller::class, 'uploadImage'])->name('admin.image');
+Route::post('/admin/announcement', [Controller::class, 'createAnnouncement'])->name('admin.announcement');
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');

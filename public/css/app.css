@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/hops_bg.jpg");
+    background-image: url("../images/hops_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -55,7 +55,9 @@ body {
 
 }
 .announcement {
-
+    height: 960px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .flex-item {
     flex-grow: 1;
@@ -206,7 +208,7 @@ body {
     background: #dae0e5;
 }
 .admin {
-
+     height: 520px;
 }
 .admin-form {
 
@@ -244,6 +246,48 @@ body {
 }
 .small-margin {
     margin-bottom: 10px;
+}
+.delete {
+    width: 150px;
+    background-color: #cc2817;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+.small-margin-left {
+    margin-left: 8px;
+}
+.uploadable {
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 6px 6px 6px 6px;
+}
+.submission {
+    margin-top: 5px;
+    width: 120px;
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 6px 6px 6px 6px;
+}
+.textfield {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #848484;
+    outline:0;
+    height:25px;
+    width: 275px;
+}
+input[type="file"] {
+    display:none;
 }
 /*.credit {*/
 /*    */
