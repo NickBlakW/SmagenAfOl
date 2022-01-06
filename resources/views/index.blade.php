@@ -6,7 +6,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/leaf.jpg') }}" type="image/x-icon">
 </head>
 
 <body>
@@ -17,10 +17,9 @@
         <div class="flex-item column">
             <div class="welcome-box">
                 <div class="welcome-sub">
-                    @forelse($beers as $beer)
                     <div class="daily-beer">
                         <h2 class="small-margin-left">Dagens Øl</h2>
-
+                        @forelse($beers as $beer)
                         <div class="card">
                             <div class="beer">
                                 @if($beer->image == null)
@@ -37,13 +36,20 @@
                                 <h5 class="beer-name">{{ $beer->name }}</h5>
                                 <p class="beer-text">{{ $beer->description }}</p>
                             </div>
+                            <div>
+                                <a href="{{ route('beer.show', [$beer->id]) }}">
+                                    <button class="types-button">Detaljer</button>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    @empty
+
+                        @empty
                         <div>
                             <h5>Dagens øl findes ikke</h5>
                         </div>
-                    @endforelse
+
+                        @endforelse
+                    </div>
 
                     <div class="explore-button">
                         <h2 class="small-margin-left">Udforsk</h2>

@@ -59,11 +59,20 @@ class Controller extends BaseController
     }
 
     public function createAnnouncement(Request $request) {
-
         $announcement = new Announcement();
         $announcement->announcement = $request->input('announcement');
         $announcement->save();
 
         return back()->with('success', 'Nyhed uploadet!');
+    }
+
+    public function set_botd(Request $request) {
+        $botd = $request->input('botd');
+
+        DB::update(
+            'UPDATE beers SET beer_of_the_day=1 WHERE name=?', [$botd]
+        );
+
+        return back()->with('success', 'Dagens øl er nu: '.$botd);
     }
 }

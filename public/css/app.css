@@ -208,7 +208,7 @@ body {
     background: #dae0e5;
 }
 .admin {
-     height: 520px;
+     height: 600px;
 }
 .admin-form {
 
@@ -241,9 +241,7 @@ body {
     font-family: "Arial Black", sans-serif;
     font-size: 20px;
 }
-.upload {
-    height: 100px;
-}
+
 .small-margin {
     margin-bottom: 10px;
 }
@@ -258,14 +256,6 @@ body {
 }
 .small-margin-left {
     margin-left: 8px;
-}
-.uploadable {
-    background-color: forestgreen;
-    color: #1a202c;
-    font-family: "Arial Black", sans-serif;
-    font-size: 15px;
-    padding: 4px 10px 4px 10px;
-    border-radius: 6px 6px 6px 6px;
 }
 .submission {
     margin-top: 5px;
@@ -286,9 +276,31 @@ body {
     height:25px;
     width: 275px;
 }
-input[type="file"] {
-    display:none;
-}
+
+
+/*input[type="file"] {*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*    top: 10px;*/
+/*    left: 8px;*/
+/*    font-size: 17px;*/
+/*    color: #b8b8b8;*/
+/*}*/
+/*.upload {*/
+/*     position: relative;*/
+/* }*/
+/*.uploadable {*/
+/*    display: inline-block;*/
+/*    cursor: pointer;*/
+/*    background-color: forestgreen;*/
+/*    color: #1a202c;*/
+/*    font-family: "Arial Black", sans-serif;*/
+/*    font-size: 15px;*/
+/*    padding: 4px 10px 4px 10px;*/
+/*    border-radius: 6px 6px 6px 6px;*/
+/*}*/
+
+
 /*.credit {*/
 /*    */
 /*    width:75%;*/

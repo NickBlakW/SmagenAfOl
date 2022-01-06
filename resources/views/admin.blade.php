@@ -2,10 +2,10 @@
 <head>
     <title>Smagen af Øl</title>
 
-    <link rel="icon" href="{{ url('css/images/leaf.jpg') }}" type="image/icon-x">
+    <link rel="icon" href="{{ url('images/leaf.jpg') }}" type="image/icon-x">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                                 <h3 class="small-margin">Opdater bryggerier</h3>
                                 <form class="admin-form" action="{{ route('admin.upload.brewery') }}" enctype="multipart/form-data" method="POST">
                                     @csrf
-                                    <label for="brewery" class="uploadable">Send bryggerier</label>
+                                    <label for="brewery" class="uploadable"></label>
                                     <input type="file" id="brewery" name="file"><br>
                                     <input class="submission" type="submit">
                                 </form>
@@ -43,7 +43,7 @@
                                 <h3 class="small-margin">Opdater øltyper</h3>
                                 <form class="admin-form" action="{{ route('admin.upload.type') }}" enctype="multipart/form-data" method="POST">
                                     @csrf
-                                    <label for="types" class="uploadable">Send øltyper</label>
+                                    <label for="types" class="uploadable"></label>
                                     <input type="file" id="types" name="file"><br>
                                     <input class="submission" type="submit">
                                 </form>
@@ -54,7 +54,7 @@
                             <h3 class="small-margin">Opdater øl</h3>
                             <form class="admin-form" action="{{ route('admin.upload.beer') }}" enctype="multipart/form-data" method="POST">
                                 @csrf
-                                <label for="beer" class="uploadable">Send øl</label>
+                                <label for="beer" class="uploadable"></label>
                                 <input type="file" id="beer" name="file"><br>
                                 <input class="submission" type="submit" value="Opdater øl">
                             </form>
@@ -67,9 +67,20 @@
                                 <h3 class="small-margin">Upload billede</h3>
                                 <form class="admin-form" action="{{ route('admin.image') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <label for="image" class="uploadable">Send billede</label>
+                                    <label for="image" class="uploadable"></label>
                                     <input type="file" id="image" name="image"><br>
                                     <input class="submission" type="submit" value="Gem billede">
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="upload">
+                                <h3 class="small-margin">Sæt dagens øl</h3>
+                                <form class="admin-form" action="{{ route('admin.botd') }}" method="POST">
+                                    @csrf
+                                    <label for="botd"></label>
+                                    <input class="textfield" id=botd type="text" name="botd" placeholder="Navn på øl"><br>
+                                    <input class="submission" type="submit" value="Dagens øl">
                                 </form>
                             </div>
                         </div>
@@ -82,7 +93,7 @@
                                 <form class="admin-form" action="{{ route('admin.announcement') }}" method="POST">
                                     @csrf
                                     <label for="announcement"></label>
-                                    <input class="textfield" id="announcement" type="text" name="announcement"><br>
+                                    <input class="textfield" id="announcement" type="text" name="announcement" placeholder="Nyheder"><br>
                                     <input class="submission" type="submit" value="Opret nyhed">
                                 </form>
                             </div>
@@ -93,4 +104,5 @@
         </div>
     </div>
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>

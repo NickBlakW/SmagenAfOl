@@ -7,7 +7,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/leaf.jpg') }}" type="image/x-icon">
 
 </head>
 <body>
