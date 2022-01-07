@@ -17,13 +17,24 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index() {
-        $beers = DB::select('SELECT * FROM beers WHERE beer_of_the_day=?', [1]);
+        $botds = DB::select('SELECT * FROM beers WHERE beer_of_the_day=?', [1]);
         $announcements = DB::select('SELECT announcement FROM announcements');
 
+        $beers = DB::table('beers')
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+
+        $breweries = DB::table('breweries')
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+
         return view('index', [
-            'beers' => $beers
-        ], [
-            'announcements' => $announcements
+            'botds' => $botds,
+            'announcements' => $announcements,
+            'beers' => $beers,
+            'breweries' => $breweries
         ]);
     }
 

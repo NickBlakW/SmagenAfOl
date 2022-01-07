@@ -18,7 +18,6 @@ class Beer extends Model
         'ibu',
         'size',
         'image',
-        'beer_of_the_day',
     ];
 
     public function hasType() {

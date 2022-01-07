@@ -19,25 +19,25 @@
                 <div class="welcome-sub">
                     <div class="daily-beer">
                         <h2 class="small-margin-left">Dagens Øl</h2>
-                        @forelse($beers as $beer)
+                        @forelse($botds as $botd)
                         <div class="card">
                             <div class="beer">
-                                @if($beer->image == null)
-                                    <a href="{{ route('beer.show', [$beer->id]) }}">
+                                @if($botd->image == null)
+                                    <a href="{{ route('beer.show', [$botd->id]) }}">
                                         <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                                     </a>
                                 @else
-                                    <a href="{{ route('beer.show', [$beer->id]) }}">
-                                        <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
+                                    <a href="{{ route('beer.show', [$botd->id]) }}">
+                                        <img class="ratio" src="{{ url('images/'.$botd->image) }}" alt=" ">
                                     </a>
                                 @endif
                             </div>
                             <div class="card-body">
-                                <h5 class="beer-name">{{ $beer->name }}</h5>
-                                <p class="beer-text">{{ $beer->description }}</p>
+                                <h5 class="beer-name">{{ $botd->name }}</h5>
+                                <p class="beer-text">{{ $botd->description }}</p>
                             </div>
                             <div>
-                                <a href="{{ route('beer.show', [$beer->id]) }}">
+                                <a href="{{ route('beer.show', [$botd->id]) }}">
                                     <button class="types-button">Detaljer</button>
                                 </a>
                             </div>

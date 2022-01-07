@@ -23,7 +23,7 @@ class CreateBeersTable extends Migration
             $table->integer('ibu')->unsigned()->nullable();
             $table->integer('size');
             $table->string('image')->nullable();
-            $table->boolean('beer_of_the_day');
+            $table->boolean('beer_of_the_day')->default(0);
 
             $table->foreign('type')->references('type')->on('beer_types');
             $table->foreign('brewery')->references('name')->on('breweries');
