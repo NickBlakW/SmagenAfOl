@@ -55,30 +55,41 @@
                         <h2 class="small-margin-left">Udforsk</h2>
                         <div class="card">
                             <div class="beer">
-                                <a href="{{ route('udforsk') }}">
-                                    <img class="beer" src="{{ url('images/Shakespeare.jpg') }}" alt=" ">
-                                </a>
+                                @if($beer != null)
+                                    @if($beer->image == null)
+                                        <a href="{{ route('udforsk') }}">
+                                            <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">
+                                        </a>
+                                    @else
+                                        <a href="{{ route('udforsk') }}">
+                                            <img class="beer" src="{{ url('images/'.$beer->image) }}" alt=" ">
+                                        </a>
+                                    @endif
+                                @endif
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('udforsk') }}">
                                     <button class="link-button">Se butikken</button>
                                 </a>
+{{--                                <a href="{{ route('udforsk') }}">--}}
+{{--                                    <button class="link-button">Se butikken</button>--}}
+{{--                                </a>--}}
                             </div>
-                            <div class="beer">
-                                <a href="{{ route('bryggeri') }}">
-                                    <img class="beer" src="{{ url('images/stone25.jpg') }}" alt=" ">
-                                </a>
-                            </div>
+{{--                            <div class="beer">--}}
+{{--                                <a href="{{ route('bryggeri') }}">--}}
+{{--                                    <img class="beer" src="{{ url('images/stone25.jpg') }}" alt=" ">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                             <div class="card-body">
                                 <a href="{{ route('bryggeri') }}">
                                     <button class="link-button">Se Bryggerier</button>
                                 </a>
                             </div>
-                            <div class="beer">
-                                <a href="{{ route('beertypes') }}">
-                                    <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">
-                                </a>
-                            </div>
+{{--                            <div class="beer">--}}
+{{--                                <a href="{{ route('beertypes') }}">--}}
+{{--                                    <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                             <div class="card-body">
                                 <a href="{{ route('beertypes') }}">
                                     <button class="link-button">Se Øltyper</button>

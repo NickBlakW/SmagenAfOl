@@ -20,21 +20,19 @@ class Controller extends BaseController
         $botds = DB::select('SELECT * FROM beers WHERE beer_of_the_day=?', [1]);
         $announcements = DB::select('SELECT announcement FROM announcements');
 
-        $beers = DB::table('beers')
-            ->inRandomOrder()
-            ->limit(5)
-            ->get();
+        $beer = Beer::all()
+            ->random();
 
-        $breweries = DB::table('breweries')
-            ->inRandomOrder()
-            ->limit(5)
-            ->get();
+//        $brewery = DB::table('breweries')
+//            ->inRandomOrder()
+//            ->limit(5)
+//            ->get();
 
         return view('index', [
             'botds' => $botds,
             'announcements' => $announcements,
-            'beers' => $beers,
-            'breweries' => $breweries
+            'beer' => $beer,
+//            'brewery' => $brewery
         ]);
     }
 

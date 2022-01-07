@@ -55,7 +55,7 @@ body {
 
 }
 .announcement {
-    height: 960px;
+    height: 425px;
     overflow-x: hidden;
     overflow-y: auto;
 }
