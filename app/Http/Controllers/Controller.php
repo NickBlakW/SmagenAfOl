@@ -18,7 +18,9 @@ class Controller extends BaseController
 
     public function index() {
         $botds = DB::select('SELECT * FROM beers WHERE beer_of_the_day=?', [1]);
-        $announcements = DB::select('SELECT announcement FROM announcements');
+        $announcements = DB::select(
+            'SELECT * FROM announcements
+                    ORDER BY id DESC');
 
         $beer = Beer::all()
             ->random();

@@ -69,7 +69,7 @@
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('udforsk') }}">
-                                    <button class="link-button">Se butikken</button>
+                                    <button class="link-button">Se øl i butikken</button>
                                 </a>
 {{--                                <a href="{{ route('udforsk') }}">--}}
 {{--                                    <button class="link-button">Se butikken</button>--}}
@@ -104,9 +104,8 @@
                             <div class="announcement-text">
                                 @forelse($announcements as $announcement)
                                     <div class="news">
-                                        <label>
-                                            {{ $announcement->announcement }}
-                                        </label>
+                                        <label class="created"><em> {{ $announcement->created_at }}</em></label><br>
+                                        <label>{{ $announcement->announcement }}</label>
                                     </div>
                                 @empty
                                     <h2>Intet nyt</h2>
