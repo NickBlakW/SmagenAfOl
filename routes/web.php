@@ -32,7 +32,10 @@ Route::post('/admin/beer', [BeerController::class, 'upload'])->name('admin.uploa
 Route::post('admin/delete', [Controller::class, 'deleteAllData'])->name('admin.delete');
 Route::post('/admin/upload',[Controller::class, 'uploadImage'])->name('admin.image');
 Route::post('/admin/announcement', [Controller::class, 'createAnnouncement'])->name('admin.announcement');
-Route::post('/admin/botd', [Controller::class, 'set_botd'])->name('admin.botd');
+Route::post('/admin/botd', [Controller::class, 'set_botd'])->name('admin.set.botd');
+Route::post('/admin/rbotd', [Controller::class, 'reset_botd'])->name('admin.reset.botd');
+Route::post('/admin/botdd', [Controller::class, 'dropdown_botd'])->name('admin.set.botdd');
+
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');

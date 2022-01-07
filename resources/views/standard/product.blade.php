@@ -5,7 +5,7 @@
                 <div class="beer">
                     <a href="{{ route('beer.show', [$beer->id]) }}">
                         @if($beer->image == null)
-                            <img class="ratio" src="{{ url('images/logo.jpg') }}" alt=" ">
+                            <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                         @else
                             <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
                         @endif

@@ -35,7 +35,7 @@
                                     @csrf
                                     <label for="brewery" class="uploadable"></label>
                                     <input type="file" id="brewery" name="file"><br>
-                                    <input class="submission" type="submit">
+                                    <input class="submission" type="submit" value="Send bryggerier">
                                 </form>
                             </div>
 
@@ -45,7 +45,7 @@
                                     @csrf
                                     <label for="types" class="uploadable"></label>
                                     <input type="file" id="types" name="file"><br>
-                                    <input class="submission" type="submit">
+                                    <input class="submission" type="submit" value="Send øltyper">
                                 </form>
                             </div>
                         </div>
@@ -62,6 +62,46 @@
                     </div>
 
                     <div class="grid-item">
+
+                        <div>
+                            <div class="upload">
+                                <h3 class="small-margin">Sæt dagens øl</h3>
+                                <form class="admin-form" action="{{ route('admin.set.botd') }}" method="POST">
+                                    @csrf
+                                    <label for="botd"></label>
+                                    <input class="textfield" id=botd type="text" name="botd" placeholder="Navn på øl"><br>
+                                    <input class="submission" type="submit" value="Dagens øl">
+                                </form>
+                                <form class="admin-form" action="{{ route('admin.reset.botd') }}" method="POST">
+                                    @csrf
+                                    <input class="delete" type="submit" value="Fjern dagens øl">
+                                </form>
+                            </div>
+
+                            <div class="upload">
+                                <h3 class="small-margin">Sæt dagens øl</h3>
+                                <form class="admin-form" action="{{ route('admin.set.botdd') }}" method="POST">
+                                    @csrf
+                                    <label for="drop"></label>
+                                    <select id="drop" name="drop" class="selection">
+                                        @forelse($beers as $beer)
+                                            <option value="{{ $beer->name }}"
+                                                    @if ($beer == old('drop', $beer->name))
+                                                    selected="selected"
+                                                @endif
+                                            > {{ $beer->name }}
+                                            </option>
+                                        @empty
+                                            <option>Ingen øl</option>
+                                        @endforelse
+                                    </select><br>
+                                    <input class="submission" type="submit" value="Dagens øl">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-item">
                         <div>
                             <div class="upload">
                                 <h3 class="small-margin">Upload billede</h3>
@@ -72,22 +112,7 @@
                                     <input class="submission" type="submit" value="Gem billede">
                                 </form>
                             </div>
-                        </div>
-                        <div>
-                            <div class="upload">
-                                <h3 class="small-margin">Sæt dagens øl</h3>
-                                <form class="admin-form" action="{{ route('admin.botd') }}" method="POST">
-                                    @csrf
-                                    <label for="botd"></label>
-                                    <input class="textfield" id=botd type="text" name="botd" placeholder="Navn på øl"><br>
-                                    <input class="submission" type="submit" value="Dagens øl">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="grid-item">
-                        <div>
                             <div class="upload">
                                 <h3 class="small-margin">Opret nyhed</h3>
                                 <form class="admin-form" action="{{ route('admin.announcement') }}" method="POST">

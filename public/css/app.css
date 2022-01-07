@@ -259,7 +259,7 @@ body {
 }
 .submission {
     margin-top: 5px;
-    width: 120px;
+    width: 150px;
     background-color: forestgreen;
     color: #1a202c;
     font-family: "Arial Black", sans-serif;
@@ -276,8 +276,20 @@ body {
     height:25px;
     width: 275px;
 }
-
-
+.selection {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #848484;
+    outline:0;
+    height:25px;
+    width: 275px;
+}
+.news {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1a202c;
+}
 /*input[type="file"] {*/
 /*    position: absolute;*/
 /*    z-index: -1;*/

@@ -28,7 +28,14 @@ class Controller extends BaseController
     }
 
     public function admin() {
-        return view('admin');
+        $beers = DB::select(
+            'SELECT * FROM beers
+                  ORDER BY name'
+        );
+
+        return view('admin', [
+            'beers' => $beers
+        ]);
     }
 
     public function deleteAllData() {
@@ -66,8 +73,27 @@ class Controller extends BaseController
         return back()->with('success', 'Nyhed uploadet!');
     }
 
+    public function reset_botd() {
+        DB::update(
+            'UPDATE beers SET beer_of_the_day=0
+                    WHERE beer_of_the_day=1'
+        );
+
+        return back()->with('success', 'Dagens øl fjernet');
+    }
+
     public function set_botd(Request $request) {
         $botd = $request->input('botd');
+
+        DB::update(
+            'UPDATE beers SET beer_of_the_day=1 WHERE name=?', [$botd]
+        );
+
+        return back()->with('success', 'Dagens øl er nu: '.$botd);
+    }
+
+    public function dropdown_botd(Request $request) {
+        $botd = $request->input('drop');
 
         DB::update(
             'UPDATE beers SET beer_of_the_day=1 WHERE name=?', [$botd]
