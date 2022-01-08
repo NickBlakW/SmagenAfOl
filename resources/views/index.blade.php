@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<head lang="en">
-    <meta charset="utf-8">
-
-    <title>Smagen af Øl</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('images/leaf.jpg') }}" type="image/x-icon">
-</head>
+@include('standard.head')
 
 <body>
 <div class="total-view">
@@ -55,14 +47,14 @@
                         <h2 class="small-margin-left">Udforsk</h2>
                         <div class="card">
                             <div class="beer">
-                                @if($beer != null)
-                                    @if($beer->image == null)
+                                @if($beer ?? '' != null)
+                                    @if($beer ?? ''->image == null)
                                         <a href="{{ route('udforsk') }}">
-                                            <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">
+                                            <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                                         </a>
                                     @else
                                         <a href="{{ route('udforsk') }}">
-                                            <img class="beer" src="{{ url('images/'.$beer->image) }}" alt=" ">
+                                            <img class="beer" src="{{ url('images/'.$beer ?? ''->image) }}" alt=" ">
                                         </a>
                                     @endif
                                 @endif

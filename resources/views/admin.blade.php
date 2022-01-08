@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<head>
-    <title>Smagen af Øl</title>
-
-    <link rel="icon" href="{{ url('images/leaf.jpg') }}" type="image/icon-x">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-
-</head>
+@include('standard.head')
 
 <body>
 <div class="total-view">
@@ -23,7 +16,7 @@
             <h1 class="beer-title">Admin</h1>
 
             @if(session()->has('success'))
-                <p>{{ session()->get('success') }}</p>
+                <p class="success">{{ session()->get('success') }}</p>
             @endif
             <div class="product-box">
                 <div class="product-sub">

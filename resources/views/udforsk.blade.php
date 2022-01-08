@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-
-        <title>Smagen af Øl</title>
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="icon" href="{{ asset('images/leaf.jpg') }}" type="image/x-icon">
-
-    </head>
+    @include('standard.head')
     <body>
         <div class="total-view">
             @include('standard.header')

@@ -22,8 +22,15 @@ class Controller extends BaseController
             'SELECT * FROM announcements
                     ORDER BY id DESC');
 
-        $beer = Beer::all()
-            ->random();
+        $beers = Beer::all();
+
+        if ($beers->count() != 0) {
+            $beer = Beer::all()
+                ->random();
+        } else {
+            $beer = null;
+        }
+
 
 //        $brewery = DB::table('breweries')
 //            ->inRandomOrder()
