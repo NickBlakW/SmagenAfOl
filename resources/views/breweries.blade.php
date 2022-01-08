@@ -39,6 +39,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 <!-- Scripts -->
 <script src="{{ asset("js/app.js") }}"></script>

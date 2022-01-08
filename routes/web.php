@@ -39,3 +39,5 @@ Route::post('/admin/botdd', [Controller::class, 'dropdown_botd'])->name('admin.s
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');
+
+//Route::get('/spiritus', [])-name('spirits');

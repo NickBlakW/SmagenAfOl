@@ -109,6 +109,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 {{--@include('standard.credit')--}}
 </body>

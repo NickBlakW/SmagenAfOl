@@ -14,6 +14,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 
 <!-- Scripts -->

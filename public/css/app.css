@@ -299,6 +299,22 @@ body {
     font-size: 15px;
     background: darkgreen;
 }
+.info {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36pt;
+    border: 3px solid #203c12;
+    background-color: #dae0e5;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.info-margin {
+    margin: 10px;
+}
+.info-text {
+    font-family: "Arial Black", sans-serif;
+    font-size: 12pt;
+    color: #1a202c;
+}
 /*input[type="file"] {*/
 /*    position: absolute;*/
 /*    z-index: -1;*/

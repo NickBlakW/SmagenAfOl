@@ -12,6 +12,7 @@
                     @include('standard.product')
                 </div>
             </div>
+           @include('standard.footer')
         </div>
 
         <!-- Scripts -->
