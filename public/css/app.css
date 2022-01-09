@@ -315,6 +315,17 @@ body {
     font-size: 12pt;
     color: #1a202c;
 }
+.info-left {
+    float:left;
+}
+.info-center {
+    padding-left: 20px;
+}
+.info-right {
+    float: left;
+    margin-left: 20px;
+}
+
 /*input[type="file"] {*/
 /*    position: absolute;*/
 /*    z-index: -1;*/
