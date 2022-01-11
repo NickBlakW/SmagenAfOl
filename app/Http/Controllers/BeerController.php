@@ -69,14 +69,6 @@ class BeerController extends Controller
         ]);
     }
 
-    public function upload() {
-        DB::delete('DELETE FROM beers');
-
-        Excel::import(new BeerImport, request()->file('file'));
-
-        return back()->with('success', 'Øl opdateret!');
-    }
-
     /**
      * Show the form for editing the specified resource.
      *

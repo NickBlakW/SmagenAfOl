@@ -61,30 +61,25 @@
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('udforsk') }}">
-                                    <button class="link-button">Se øl i butikken</button>
+                                    <button class="link-button">Se Øl I Butikken</button>
                                 </a>
-{{--                                <a href="{{ route('udforsk') }}">--}}
-{{--                                    <button class="link-button">Se butikken</button>--}}
-{{--                                </a>--}}
                             </div>
-{{--                            <div class="beer">--}}
-{{--                                <a href="{{ route('bryggeri') }}">--}}
-{{--                                    <img class="beer" src="{{ url('images/stone25.jpg') }}" alt=" ">--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+
                             <div class="card-body">
                                 <a href="{{ route('bryggeri') }}">
                                     <button class="link-button">Se Bryggerier</button>
                                 </a>
                             </div>
-{{--                            <div class="beer">--}}
-{{--                                <a href="{{ route('beertypes') }}">--}}
-{{--                                    <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
+
                             <div class="card-body">
                                 <a href="{{ route('beertypes') }}">
                                     <button class="link-button">Se Øltyper</button>
+                                </a>
+                            </div>
+
+                            <div class="card-body">
+                                <a href="{{ route('spirit_home') }}">
+                                    <button class="link-button">Se Spiritus</button>
                                 </a>
                             </div>
                         </div>

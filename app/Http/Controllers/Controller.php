@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ImportAll;
 use App\Models\announcement;
 use App\Models\Beer;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Controller extends BaseController
 {
@@ -60,6 +62,9 @@ class Controller extends BaseController
         DB::delete('DELETE FROM beers');
         DB::delete('DELETE FROM beer_types');
         DB::delete('DELETE FROM breweries');
+        DB::delete('DELETE FROM spirits');
+        DB::delete('DELETE FROM spirit_types');
+        DB::delete('DELETE FROM destilleries');
 
         return back()->with('success', 'Al Data slettet!');
     }
@@ -118,5 +123,12 @@ class Controller extends BaseController
         );
 
         return back()->with('success', 'Dagens øl er nu: '.$botd);
+    }
+
+    public function allBeerUpload() {
+
+        Excel::import(new ImportAll(), \request()->file('file'));
+
+        return back()->with('success', 'Alt opdateret!');
     }
 }

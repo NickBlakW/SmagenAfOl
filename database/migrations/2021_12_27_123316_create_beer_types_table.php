@@ -19,18 +19,6 @@ class CreateBeerTypesTable extends Migration
             $table->string('type')->unique();
             $table->timestamps();
         });
-
-        DB::table('beer_types')->insert([
-            ['type' => 'Pilsner',],
-            ['type' => 'Wheat',],
-            ['type' => 'IPA',],
-            ['type' => 'Stout',],
-            ['type' => 'Ale',],
-            ['type' => 'Sour',],
-            ['type' => 'Session',],
-            ['type' => 'Alcohol Free',],
-            ['type' => 'Table Beer',]
-        ]);
     }
 
     /**

@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Destilleri extends Model
+class SpiritType extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['type'];
+
+    public function spirit() {
+        return $this->belongsTo('spirits');
+    }
 }

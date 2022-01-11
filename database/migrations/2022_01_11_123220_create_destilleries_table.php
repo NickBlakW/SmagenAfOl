@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpiritusesTable extends Migration
+class CreateDestilleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateSpiritusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('spirituses', function (Blueprint $table) {
+        Schema::create('destilleries', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateSpiritusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spirituses');
+        Schema::dropIfExists('destilleries');
     }
 }

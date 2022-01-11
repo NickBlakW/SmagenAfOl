@@ -13,7 +13,7 @@
             <div class="beer-box">
                 <div class="beer-sub">
                     @if($beer->image == null)
-                        <img class="ratio" src="{{ url('css/images/standin.jpg') }}" alt=" ">
+                        <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                     @else
                         <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
                     @endif
@@ -41,10 +41,10 @@
 
                             <p class="beer-information">Vol: {{ $beer->alc_percent }}%</p>
 
-                            @if($beer->IBU == 0)
+                            @if($beer->ibu == null)
                                 <p class="beer-information">IBU: N/A</p>
                             @else
-                                <p class="beer-information">IBU: {{ $beer->IBU }}</p>
+                                <p class="beer-information">IBU: {{ $beer->ibu }}</p>
                             @endif
 
                             <p class="beer-information">Størrelse: {{ $beer->size }}ml</p>

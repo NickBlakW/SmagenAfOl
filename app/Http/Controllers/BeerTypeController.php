@@ -64,14 +64,6 @@ class BeerTypeController extends Controller
         ]);
     }
 
-    public function upload() {
-        DB::delete('DELETE FROM beer_types');
-
-        Excel::import(new Beer_typeImport, request()->file('file'));
-
-        return back()->with('success', 'Øltyper opdateret');
-    }
-
     /**
      * Show the form for editing the specified resource.
      *

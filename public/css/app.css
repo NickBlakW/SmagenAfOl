@@ -325,7 +325,13 @@ body {
     float: left;
     margin-left: 20px;
 }
-
+.spirit-sub {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.card-bg {
+    background: lightgreen;
+}
 /*input[type="file"] {*/
 /*    position: absolute;*/
 /*    z-index: -1;*/

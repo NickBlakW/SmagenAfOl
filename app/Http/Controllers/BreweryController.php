@@ -65,14 +65,6 @@ class BreweryController extends Controller
         ]);
     }
 
-    public function upload() {
-        DB::delete('DELETE FROM breweries');
-
-        Excel::import(new BreweryImport, request()->file('file'));
-
-        return back()->with('success', 'Bryggerier opdateret!');
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
