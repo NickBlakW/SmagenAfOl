@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<head lang="en">
-    <meta charset="utf-8">
-
-    <title>Smagen af Øl</title>
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
-
-</head>
+@include('standard.head')
 
 <body>
 <div class="total-view">
@@ -20,10 +12,10 @@
             <h1 class="beer-title">{{ $beer->name }}</h1>
             <div class="beer-box">
                 <div class="beer-sub">
-                    @if($beer->filename == null)
-                        <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                    @if($beer->image == null)
+                        <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                     @else
-                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                        <img class="ratio" src="{{ url('images/'.$beer->image) }}" alt=" ">
                     @endif
 
                     <div class="">
@@ -49,10 +41,10 @@
 
                             <p class="beer-information">Vol: {{ $beer->alc_percent }}%</p>
 
-                            @if($beer->IBU == 0)
+                            @if($beer->ibu == null)
                                 <p class="beer-information">IBU: N/A</p>
                             @else
-                                <p class="beer-information">IBU: {{ $beer->IBU }}</p>
+                                <p class="beer-information">IBU: {{ $beer->ibu }}</p>
                             @endif
 
                             <p class="beer-information">Størrelse: {{ $beer->size }}ml</p>
@@ -68,8 +60,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
 </body>

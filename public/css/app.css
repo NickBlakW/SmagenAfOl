@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/hops_bg.jpg");
+    background-image: url("../images/hops_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -55,7 +55,9 @@ body {
 
 }
 .announcement {
-
+    height: 425px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .flex-item {
     flex-grow: 1;
@@ -143,6 +145,7 @@ body {
 .ratio {
     position: relative;
     object-fit: fill;
+    border-radius: 0.25rem;
     height: 267px;
     width: 267px;
 }
@@ -206,7 +209,7 @@ body {
     background: #dae0e5;
 }
 .admin {
-
+     height: 600px;
 }
 .admin-form {
 
@@ -239,6 +242,119 @@ body {
     font-family: "Arial Black", sans-serif;
     font-size: 20px;
 }
+
+.small-margin {
+    margin-bottom: 10px;
+}
+.delete {
+    width: 150px;
+    background-color: #cc2817;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    padding: 4px 20px 4px 20px;
+    border-radius: 6px 6px 6px 6px;
+}
+.small-margin-left {
+    margin-left: 8px;
+}
+.submission {
+    margin-top: 5px;
+    width: 150px;
+    background-color: forestgreen;
+    color: #1a202c;
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    padding: 4px 10px 4px 10px;
+    border-radius: 6px 6px 6px 6px;
+}
+.textfield {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #848484;
+    outline:0;
+    height:25px;
+    width: 275px;
+}
+.selection {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #848484;
+    outline:0;
+    height:25px;
+    width: 275px;
+}
+.news {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1a202c;
+}
+.created {
+    padding-bottom: 10px;
+}
+.success {
+    font-family: "Arial Black", sans-serif;
+    font-size: 15px;
+    background: darkgreen;
+}
+.info {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36pt;
+    border: 3px solid #203c12;
+    background-color: #dae0e5;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.info-margin {
+    margin: 10px;
+}
+.info-text {
+    font-family: "Arial Black", sans-serif;
+    font-size: 12pt;
+    color: #1a202c;
+}
+.info-left {
+    float:left;
+}
+.info-center {
+    padding-left: 20px;
+}
+.info-right {
+    float: left;
+    margin-left: 20px;
+}
+.spirit-sub {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.card-bg {
+    background: lightgreen;
+}
+/*input[type="file"] {*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*    top: 10px;*/
+/*    left: 8px;*/
+/*    font-size: 17px;*/
+/*    color: #b8b8b8;*/
+/*}*/
+/*.upload {*/
+/*     position: relative;*/
+/* }*/
+/*.uploadable {*/
+/*    display: inline-block;*/
+/*    cursor: pointer;*/
+/*    background-color: forestgreen;*/
+/*    color: #1a202c;*/
+/*    font-family: "Arial Black", sans-serif;*/
+/*    font-size: 15px;*/
+/*    padding: 4px 10px 4px 10px;*/
+/*    border-radius: 6px 6px 6px 6px;*/
+/*}*/
+
+
 /*.credit {*/
 /*    */
 /*    width:75%;*/

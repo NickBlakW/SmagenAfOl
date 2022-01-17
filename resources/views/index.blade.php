@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<head lang="en">
-    <meta charset="utf-8">
-
-    <title>Smagen af Øl</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
-</head>
+@include('standard.head')
 
 <body>
 <div class="total-view">
@@ -17,79 +9,91 @@
         <div class="flex-item column">
             <div class="welcome-box">
                 <div class="welcome-sub">
-                    @forelse($beers as $beer)
                     <div class="daily-beer">
-                        <h2>Dagens Øl</h2>
-
+                        <h2 class="small-margin-left">Dagens Øl</h2>
+                        @forelse($botds as $botd)
                         <div class="card">
                             <div class="beer">
-                                @if($beer->filename == null)
-                                    <a href="{{ route('beer.show', [$beer->id]) }}">
-                                        <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">
+                                @if($botd->image == null)
+                                    <a href="{{ route('beer.show', [$botd->id]) }}">
+                                        <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
                                     </a>
                                 @else
-                                    <a href="{{ route('beer.show', [$beer->id]) }}">
-                                        <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">
+                                    <a href="{{ route('beer.show', [$botd->id]) }}">
+                                        <img class="ratio" src="{{ url('images/'.$botd->image) }}" alt=" ">
                                     </a>
                                 @endif
                             </div>
                             <div class="card-body">
-                                <h5 class="beer-name">{{ $beer->name }}</h5>
-                                <p class="beer-text">{{ $beer->description }}</p>
+                                <h5 class="beer-name">{{ $botd->name }}</h5>
+                                <p class="beer-text">{{ $botd->description }}</p>
+                            </div>
+                            <div>
+                                <a href="{{ route('beer.show', [$botd->id]) }}">
+                                    <button class="types-button">Detaljer</button>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    @empty
+
+                        @empty
                         <div>
                             <h5>Dagens øl findes ikke</h5>
                         </div>
-                    @endforelse
+
+                        @endforelse
+                    </div>
 
                     <div class="explore-button">
-                        <h2>Udforsk</h2>
+                        <h2 class="small-margin-left">Udforsk</h2>
                         <div class="card">
                             <div class="beer">
-                                <a href="{{ route('udforsk') }}">
-                                    <img class="beer" src="{{ url('css/images/Shakespeare.jpg') }}" alt=" ">
-                                </a>
+                                @if($beer ?? '' != null)
+                                    @if($beer ?? ''->image == null)
+                                        <a href="{{ route('udforsk') }}">
+                                            <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
+                                        </a>
+                                    @else
+                                        <a href="{{ route('udforsk') }}">
+                                            <img class="beer" src="{{ url('images/'.$beer ?? ''->image) }}" alt=" ">
+                                        </a>
+                                    @endif
+                                @endif
                             </div>
                             <div class="card-body">
                                 <a href="{{ route('udforsk') }}">
-                                    <button class="link-button">Se butikken</button>
+                                    <button class="link-button">Se Øl I Butikken</button>
                                 </a>
                             </div>
-                            <div class="beer">
-                                <a href="{{ route('bryggeri') }}">
-                                    <img class="beer" src="{{ url('css/images/stone25.jpg') }}" alt=" ">
-                                </a>
-                            </div>
+
                             <div class="card-body">
                                 <a href="{{ route('bryggeri') }}">
                                     <button class="link-button">Se Bryggerier</button>
                                 </a>
                             </div>
-                            <div class="beer">
-                                <a href="{{ route('beertypes') }}">
-                                    <img class="beer" src="{{ url('css/images/logo.jpg') }}" alt=" ">
-                                </a>
-                            </div>
+
                             <div class="card-body">
                                 <a href="{{ route('beertypes') }}">
                                     <button class="link-button">Se Øltyper</button>
                                 </a>
                             </div>
+
+                            <div class="card-body">
+                                <a href="{{ route('spirit_home') }}">
+                                    <button class="link-button">Se Spiritus</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="announcement">
-                        <h2>Sidste nyt</h2>
-                        <div class="card">
+                    <div>
+                        <h2 class="small-margin-left">Sidste nyt</h2>
+                        <div class="card announcement">
                             <div class="announcement-text">
                                 @forelse($announcements as $announcement)
-                                    <label>
-                                        {{ $announcement->announcement }}
-                                    </label>
-                                    <p>_____________________________</p>
+                                    <div class="news">
+                                        <label class="created"><em> {{ $announcement->created_at }}</em></label><br>
+                                        <label>{{ $announcement->announcement }}</label>
+                                    </div>
                                 @empty
                                     <h2>Intet nyt</h2>
                                 @endforelse
@@ -100,6 +104,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 {{--@include('standard.credit')--}}
 </body>

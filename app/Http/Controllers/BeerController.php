@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\Beer_typeImport;
+use App\Imports\BeerImport;
+use App\Imports\BreweryImport;
 use App\Models\Beer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BeerController extends Controller
 {

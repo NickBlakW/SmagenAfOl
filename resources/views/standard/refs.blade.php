@@ -19,5 +19,9 @@
         <div class="option-link">
             <a href="{{ route('beertypes') }}" class="option">Øltyper</a>
         </div>
+
+        <div class="option-link">
+            <a href="{{ route('spirit_home') }}" class="option">Spiritus</a>
+        </div>
     </div>
 </div>

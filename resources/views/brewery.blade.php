@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<head lang="en">
-    <title>Smagen af Øl</title>
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
-
-</head>
+@include('standard.head')
 
 <body>
 <div class="total-view">
@@ -38,7 +32,6 @@
             @include('standard.product')
         </div>
     </div>
+    @include('standard.footer')
 </div>
-
-<script src="{{ asset('js/app.js') }}"></script>
 </body>

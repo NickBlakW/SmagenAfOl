@@ -2,29 +2,28 @@
 
 namespace App\Imports;
 
-use App\Models\Beer;
+use App\Models\Spirit;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class BeerImport implements ToModel, WithHeadingRow, SkipsEmptyRows
+class SpiritImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     /**
     * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
     */
     public function model(array $row)
     {
-        return new Beer([
+        return new Spirit([
             'name' => $row['name'],
             'description' => $row['description'],
             'type' => $row['type'],
-            'brewery' => $row['brewery'],
+            'destillery' => $row['destillery'],
             'alc_percent' => $row['alc_percent'],
-            'ibu' => $row['ibu'],
             'size' => $row['size'],
-            'image' => $row['image'],
+            'image' => $row['image']
         ]);
     }
 }

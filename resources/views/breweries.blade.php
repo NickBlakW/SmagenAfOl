@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+@include('standard.head')
 
-    <title>Smagen af Øl</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="icon" href="{{ asset('css/images/leaf.jpg') }}" type="image/x-icon">
-
-</head>
 <body>
 <div class="total-view">
     @include('standard.header')
@@ -22,16 +14,8 @@
                 <div class="product-sub">
                     @forelse($breweries as $brewery)
                         <div class="grid-item">
-                            <div class="card">
-                                <div class="beer">
-{{--                                    <a href="{{ route('beer.show', [$brewery->id]) }}">--}}
-{{--                                        @if($beer->filename == null)--}}
-{{--                                            <img class="ratio" src="{{ url('css/images/logo.jpg') }}" alt=" ">--}}
-{{--                                        @else--}}
-{{--                                            <img class="ratio" src="{{ url('css/images/'.$beer->filename) }}" alt=" ">--}}
-{{--                                        @endif--}}
-{{--                                    </a>--}}
-                                </div>
+                            <div class="card card-bg">
+
                                 <div class="card-body">
                                     <a class="option-link option" href="{{ route('brewery.show', [$brewery->id]) }}">
                                         <h5 class="beer-name">{{ $brewery->name }}</h5>
@@ -47,6 +31,7 @@
             </div>
         </div>
     </div>
+    @include('standard.footer')
 </div>
 <!-- Scripts -->
 <script src="{{ asset("js/app.js") }}"></script>

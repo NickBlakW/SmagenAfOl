@@ -4,6 +4,7 @@ use App\Http\Controllers\BeerController;
 use App\Http\Controllers\BeerTypeController;
 use App\Http\Controllers\BreweryController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\SpiritController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,18 @@ Route::get('/bryggerier', [BreweryController::class, 'index'])->name('bryggeri')
 Route::get('/bryggerier/{brewery}', [BreweryController::class, 'show'])->name('brewery.show');
 
 Route::get('/admin', [Controller::class, 'admin'])->name('admin');
-Route::post('/admin', [Controller::class, 'store'])->name('admin.store');
+Route::post('admin/delete', [Controller::class, 'deleteAllData'])->name('admin.delete');
+Route::post('/admin/upload',[Controller::class, 'uploadImage'])->name('admin.image');
+Route::post('/admin/announcement', [Controller::class, 'createAnnouncement'])->name('admin.announcement');
+Route::post('/admin/rbotd', [Controller::class, 'reset_botd'])->name('admin.reset.botd');
+Route::post('/admin/botdd', [Controller::class, 'dropdown_botd'])->name('admin.set.botd');
+Route::post('/admin/data', [Controller::class, 'allBeerUpload'])->name('upload_data');
 
 Route::get('/typer', [BeerTypeController::class, 'index'])->name('beertypes');
 Route::get('/typer/{type}', [BeerTypeController::class, 'show'])->name('beertypes.show');
+
+Route::get('/spiritus', [SpiritController::class, 'index'])->name('spirit_home');
+Route::get('/spiritus/destillerier', [SpiritController::class, 'destilleries'])->name('destilleries');
+Route::get('/spiritus/udforsk', [SpiritController::class, 'spirits'])->name('spirits');
+Route::get('/spiritus/{spirit}', [SpiritController::class, 'show'])->name('spirits.show');
+Route::get('/spiritus/destillerier/{destillery}', [SpiritController::class, 'destillery'])->name('destilleries.show');

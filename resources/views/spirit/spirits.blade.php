@@ -1,22 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
 @include('standard.head')
 
 <body>
 <div class="total-view">
-    @include('standard.header')
+    @include('standard.spiritheader')
 
     <div class="container">
         @include('standard.refs')
 
-        <div class="flex-item column">
-            <div class="product-box">
-                @include('standard.product')
-            </div>
+        <div class="flex-item column scrollable">
+            @include('standard.spirits')
         </div>
     </div>
     @include('standard.footer')
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset("js/app.js") }}"></script>
 </body>
+</html>

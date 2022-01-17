@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Beer extends Model
+class Spirit extends Model
 {
     use HasFactory;
 
@@ -13,18 +13,17 @@ class Beer extends Model
         'name',
         'description',
         'type',
-        'brewery',
+        'destillery',
         'alc_percent',
-        'ibu',
         'size',
-        'image',
+        'image'
     ];
 
-    public function hasType() {
-        return $this->hasOne(Beer_type::class, 'type');
+    public function type() {
+        return $this->hasOne(SpiritType::class, 'type');
     }
 
-    public function brewery() {
-        return $this->belongsTo(Brewery::class, 'brewery');
+    public function destillery() {
+        return $this->belongsTo(Destillery::class, 'destillery');
     }
 }

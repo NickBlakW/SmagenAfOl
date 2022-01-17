@@ -2,21 +2,17 @@
 
 namespace App\Imports;
 
-use App\Models\Brewery;
+use App\Models\Destillery;
 use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class BreweryImport implements ToModel, WithHeadingRow, SkipsEmptyRows
+class DestilleryImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+
     public function model(array $row)
     {
-        return new Brewery([
+        return new Destillery([
             'name' => $row['name'],
             'description' => $row['description']
         ]);

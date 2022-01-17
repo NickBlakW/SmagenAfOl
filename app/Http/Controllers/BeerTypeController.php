@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\Beer_typeImport;
 use App\Models\Beer_type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BeerTypeController extends Controller
 {
@@ -41,7 +43,7 @@ class BeerTypeController extends Controller
      */
 //    public function store(Request $request)
 //    {
-//        //
+//
 //    }
 
     /**
