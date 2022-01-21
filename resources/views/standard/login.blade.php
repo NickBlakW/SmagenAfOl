@@ -26,6 +26,13 @@
                         </div>
                     </form>
                 </div>
+                <div class="login-error margin-top">
+                    @if(Session()->has('login-error'))
+                        <div class="error-box">
+                            <p class="error">{{ session()->get('login-error') }}</p>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

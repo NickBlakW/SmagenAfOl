@@ -7,8 +7,9 @@
 
     <div class="container">
         <div class="flex-item column admin">
+            <h1 class="beer-title">{{ Auth::user()->name }}</h1>
             <div class="product-sub">
-                <div class="grid-item">
+                <div class="grid-item" id="delete-toggle">
                     <form action="{{ route('admin.delete') }}" method="POST">
                         @csrf
                         <button class="delete" type="submit">Slet al Data</button>
@@ -16,6 +17,8 @@
                 </div>
                 <div class="grid-item">
                     <button class="submission" id="pass-toggler">Skift Password</button>
+
+                    <button class="submission" id="admin-toggler">Opret Admin</button>
                     <div class="show-hide" id="pass-toggle">
                         <form action="{{ route('change_password') }}" method="POST">
                             @method('PUT')
@@ -25,7 +28,6 @@
                             <button type="submit">Skift Password</button>
                         </form>
                     </div>
-                    <button class="submission" id="admin-toggler">Opret Admin</button>
                     <div class="show-hide" id="admin-toggle">
                         <form action="{{ route('admin.create') }}" method="POST">
                             @csrf
@@ -53,7 +55,6 @@
                     </a>
                 </div>
             </div>
-            <h1 class="beer-title">Admin</h1>
 
             @if(session()->has('success'))
                 <p class="success">{{ session()->get('success') }}</p>

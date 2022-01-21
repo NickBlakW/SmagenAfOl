@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-            'name' => 'admin',
+            'name' => 'Admin',
             'password' => Hash::make('admin')
         ]);
 

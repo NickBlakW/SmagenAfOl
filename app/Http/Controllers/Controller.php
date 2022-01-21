@@ -137,8 +137,9 @@ class Controller extends BaseController
 
     public function createAdmin(Request $request) {
 //        $request->validate([
-//            'name' => ['required', 'string'],
-//            'password' => ['required', 'confirmed']
+//            'admin-name' => ['required','string'],
+//            'admin-pass' => ['required','confirmed','min:6'],
+//            'admin-confirm' => ['required','min:6']
 //        ]);
 
         $user = new User();
@@ -146,7 +147,7 @@ class Controller extends BaseController
         $user->password = bcrypt($request->input('admin-pass'));
         $user->save();
 
-        return back()->with('success', 'Admin oprettet.');
+        return back()->with('success', $user->name.' oprettet!');
     }
 
     public function login(Request $request) {
@@ -159,6 +160,8 @@ class Controller extends BaseController
         ])) {
             return redirect()->route('admin');
         }
+
+        return back()->with('login-error', 'Kunne ikke logge ind');
     }
 
     public function changePassword(Request $request) {
