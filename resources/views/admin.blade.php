@@ -7,11 +7,51 @@
 
     <div class="container">
         <div class="flex-item column admin">
-            <div class="grid-item">
-                <form action="{{ route('admin.delete') }}" method="POST">
-                    @csrf
-                    <button class="delete" type="submit">Slet al data</button>
-                </form>
+            <div class="product-sub">
+                <div class="grid-item">
+                    <form action="{{ route('admin.delete') }}" method="POST">
+                        @csrf
+                        <button class="delete" type="submit">Slet al Data</button>
+                    </form>
+                </div>
+                <div class="grid-item">
+                    <button class="submission" id="pass-toggler">Skift Password</button>
+                    <div class="show-hide" id="pass-toggle">
+                        <form action="{{ route('change_password') }}" method="POST">
+                            @method('PUT')
+                            @csrf
+                            <label for="new-password">Nyt Password:</label><br>
+                            <input type="text" name="new-password" id="new-password">
+                            <button type="submit">Skift Password</button>
+                        </form>
+                    </div>
+                    <button class="submission" id="admin-toggler">Opret Admin</button>
+                    <div class="show-hide" id="admin-toggle">
+                        <form action="{{ route('admin.create') }}" method="POST">
+                            @csrf
+                            <div>
+                                <label for="admin-name">Brugernavn:</label><br>
+                                <input type="text" name="admin-name" id="admin-name">
+                            </div>
+                            <div>
+                                <label for="admin-pass">Password:</label><br>
+                                <input type="password" name="admin-pass" id="admin-pass">
+                            </div>
+                            <div>
+                                <label for="admin-confirm">Bekræft Password:</label><br>
+                                <input type="password" name="admin-confirm" id="admin-confirm">
+                            </div>
+                            <div>
+                                <button type="submit" class="submission">Opret Admin</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <a href="{{ route('logout') }}">
+                        <button class="submission">Log ud</button>
+                    </a>
+                </div>
             </div>
             <h1 class="beer-title">Admin</h1>
 
@@ -89,5 +129,15 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#pass-toggler").click(function(event) {
+            $("#pass-toggle").toggle();
+        });
+
+        $("#admin-toggler").click(function(event) {
+            $("#admin-toggle").toggle();
+        })
+    });
+</script>
 </body>

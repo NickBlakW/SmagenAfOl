@@ -18,6 +18,20 @@ body {
     margin-top: 5px;
     overflow: hidden;
 }
+.modal {
+     display: block;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 70%;
+     height: 100%;
+     overflow: auto;
+     background-color: #dae0e5;
+     border: 3px solid #203c12;
+     alignment: center;
+     margin: auto;
+ }
 .logo {
     height: 120px;
     float:left;
@@ -306,6 +320,8 @@ body {
     background-color: #dae0e5;
     margin-top: 15px;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
 }
 .info-margin {
     margin: 10px;
@@ -322,7 +338,7 @@ body {
     padding-left: 20px;
 }
 .info-right {
-    float: left;
+    float: right;
     margin-left: 20px;
 }
 .spirit-sub {
@@ -330,7 +346,20 @@ body {
     grid-template-columns: 50% 50%;
 }
 .card-bg {
-    background: lightgreen;
+    background: #c2ea5e;
+}
+.footer-link {
+    color: #1a202c;
+}
+.margin-top {
+    margin-top: 20px;
+}
+.login-pg {
+    text-align: center;
+    margin-top: 150px;
+}
+.admin-buttons {
+
 }
 /*input[type="file"] {*/
 /*    position: absolute;*/

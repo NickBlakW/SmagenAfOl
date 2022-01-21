@@ -16,11 +16,11 @@
                             <div class="beer">
                                 @if($botd->image == null)
                                     <a href="{{ route('beer.show', [$botd->id]) }}">
-                                        <img class="ratio" src="{{ url('images/standin.jpg') }}" alt=" ">
+                                        <img class="beer" src="{{ url('images/standin.jpg') }}" alt=" ">
                                     </a>
                                 @else
                                     <a href="{{ route('beer.show', [$botd->id]) }}">
-                                        <img class="ratio" src="{{ url('images/'.$botd->image) }}" alt=" ">
+                                        <img class="beer" src="{{ url('images/'.$botd->image) }}" alt=" ">
                                     </a>
                                 @endif
                             </div>
@@ -106,5 +106,7 @@
     </div>
     @include('standard.footer')
 </div>
+
+@include('standard.modal')
 {{--@include('standard.credit')--}}
 </body>

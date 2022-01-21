@@ -7,10 +7,15 @@
     </div>
     <div class="info-center">
         <!-- Åbningstider og link til facebook -->
-        <p class="info-margin info-text">facebook</p>
+        <p class="info-margin info-text">
+            <a class="footer-link" href="https://www.facebook.com/Smagen-af-Øl-1685648551709238/" target="_blank">
+                Facebook
+            </a>
+        </p>
     </div>
     <div class="info-right">
-
+        <p class="info-margin info-text"><strong>Åbningstider</strong></p>
+        <p class="info-margin info-text">man-fre: 13-18</p>
     </div>
 </div>
 
