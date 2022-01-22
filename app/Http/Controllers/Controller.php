@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Imports\ImportAll;
 use App\Models\announcement;
 use App\Models\Beer;
+use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -33,18 +36,14 @@ class Controller extends BaseController
             $beer = null;
         }
 
-
-//        $brewery = DB::table('breweries')
-//            ->inRandomOrder()
-//            ->limit(5)
-//            ->get();
+        $popup = 'Modal shown';
 
         return view('index', [
             'botds' => $botds,
             'announcements' => $announcements,
             'beer' => $beer,
-//            'brewery' => $brewery
-        ]);
+            'popup' => $popup
+        ])->with('modal', 'Modal works');
     }
 
     public function admin() {
@@ -130,5 +129,52 @@ class Controller extends BaseController
         Excel::import(new ImportAll(), \request()->file('file'));
 
         return back()->with('success', 'Alt opdateret!');
+    }
+
+    public function toLogin() {
+        return view('standard.login');
+    }
+
+    public function createAdmin(Request $request) {
+//        $request->validate([
+//            'admin-name' => ['required','string'],
+//            'admin-pass' => ['required','confirmed','min:6'],
+//            'admin-confirm' => ['required','min:6']
+//        ]);
+
+        $user = new User();
+        $user->name = $request->input('admin-name');
+        $user->password = bcrypt($request->input('admin-pass'));
+        $user->save();
+
+        return back()->with('success', $user->name.' oprettet!');
+    }
+
+    public function login(Request $request) {
+        $name = $request->input('name');
+        $password = $request->input('password');
+
+        if (Auth::attempt([
+            'name' => $name,
+            'password' => $password
+        ])) {
+            return redirect()->route('admin');
+        }
+
+        return back()->with('login-error', 'Kunne ikke logge ind');
+    }
+
+    public function changePassword(Request $request) {
+        $id = $request->user()->id;
+
+        $password = bcrypt($request->input('new-password'));
+
+        DB::update('UPDATE users SET password=? WHERE id=?', [$password, $id]);
+
+        return back()->with('success', 'Password opdateret!');
+    }
+
+    public function logout() {
+        return redirect()->route('login')->with(Auth::logout());
     }
 }

@@ -16,7 +16,7 @@
                                 <div class="grid-item">
                                     <div class="card card-bg">
                                         <div class="card-body">
-                                            <a class="option-link option" href="{{ route('brewery.show', [$destillery->id]) }}">
+                                            <a class="option-link option" href="{{ route('destilleries.show', [$destillery->id]) }}">
                                                 <h5 class="beer-name">{{ $destillery->name }}</h5>
                                             </a>
                                             <p class="beer-text">{{ $destillery->description }}</p>
