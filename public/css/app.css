@@ -19,19 +19,36 @@ body {
     overflow: hidden;
 }
 .modal {
-     display: block;
+     /*display: block;*/
      position: fixed;
-     z-index: 1;
-     left: 0;
-     top: 0;
-     width: 70%;
-     height: 100%;
+     z-index: 99999;
+    top: 25%;
+    left: 25%;
+     width: 50%;
+     height: 40%;
      overflow: auto;
      background-color: #dae0e5;
      border: 3px solid #203c12;
-     alignment: center;
-     margin: auto;
  }
+.modal-body {
+    position: relative;
+
+}
+.overlay {
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: #000000;
+    z-index: 99998;
+    opacity: 1;
+    cursor: wait;
+}
 .logo {
     height: 120px;
     float:left;
@@ -374,6 +391,35 @@ body {
     font-size: 12pt;
     color: #1a202c;
     text-align: center;
+}
+.closed {
+     display: none;
+ }
+.open {
+    display: block;
+}
+.popup {
+    text-align: center;
+}
+.extra-top {
+    margin-top: 50px;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
+.popup-title {
+    text-align: center;
+    font-family: "Arial Black", sans-serif;
+    background: #c2ea5e;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 3px solid #0b2e13;
+}
+.center-link {
+    text-align: center;
+    color: #203c12;
+    font-family: "Lucida Bright", sans-serif;
 }
 /*input[type="file"] {*/
 /*    position: absolute;*/

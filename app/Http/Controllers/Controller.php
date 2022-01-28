@@ -36,14 +36,14 @@ class Controller extends BaseController
             $beer = null;
         }
 
-        $popup = 'Modal shown';
+        $popup = 'Du skal være over 18 for at se denne hjemmeside.';
 
         return view('index', [
             'botds' => $botds,
             'announcements' => $announcements,
             'beer' => $beer,
             'popup' => $popup
-        ])->with('modal', 'Modal works');
+        ])->with('ageCheck');
     }
 
     public function admin() {

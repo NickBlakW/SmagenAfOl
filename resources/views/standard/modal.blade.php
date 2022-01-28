@@ -1,27 +1,37 @@
-@if($popup)
-    @if(session()->has('modal'))
-        <div class="modal fade" tabindex="-1" id="popup">
+{{--@if($popup)--}}
+{{--    @if(session()->has('modal'))--}}
+    <div class="overlay {{-- @if(session()->has('ageCheck')) open @else closed @endif --}}" id="overlay">
+        <div class="modal fade" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="text-uppercase">{{ $popup }}</h4>
+                        <h1 class="popup-title">Bekræft alder</h1>
+                    </div>
+                    <div>
+                        <h4 class="beer-title popup">{{ $popup }}</h4>
                     </div>
                     <div class="modal-body text-center">
-                        <div>
+                        <div class=" centered extra-top">
                             <button class="link-button" id="confirm">Ja, jeg er over 18.</button>
+                        </div>
+
+                        <div class="extra-top">
+                            <a href="http://google.com" class="option">
+                                <p class="center-link">FORLAD HJEMMESIDE</p>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <script>
-            let modal = document.getElementById('popup');
+            let overlay = document.getElementById('overlay');
             let confirm = document.getElementById('confirm');
 
             confirm.onclick = function () {
-                modal.style.display = 'none';
+                overlay.style.display = 'none';
             }
         </script>
-        {{ session()->forget('modal') }}
-    @endif
-@endif
+    </div>
+{{--    @endif--}}
+{{--@endif--}}
