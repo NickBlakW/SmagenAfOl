@@ -12,7 +12,7 @@
                 </div>
                 <div class="modal-body text-center">
                     <div class="centered extra-top">
-                        <button class="link-button" id="confirm" onclick="createCookie('age_check', 'valid', 1)">
+                        <button class="link-button" id="confirm" onclick="createCookie('age_check', 'valid', true)">
                             Ja, jeg er over 18.
                         </button>
                     </div>

@@ -39,7 +39,7 @@
 
                         @empty
                         <div>
-                            <h5>Dagens øl findes ikke</h5>
+                            <h5>Dagens øl er ikke blevet valgt endnu.</h5>
                         </div>
 
                         @endforelse

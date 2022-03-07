@@ -58,12 +58,21 @@ class Controller extends BaseController
     }
 
     public function deleteAllData() {
-        DB::delete('DELETE FROM beers');
-        DB::delete('DELETE FROM beer_types');
-        DB::delete('DELETE FROM breweries');
-        DB::delete('DELETE FROM spirits');
-        DB::delete('DELETE FROM spirit_types');
-        DB::delete('DELETE FROM destilleries');
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('beers')->truncate();
+        DB::table('beer_types')->truncate();
+        DB::table('breweries')->truncate();
+        DB::table('spirits')->truncate();
+        DB::table('spirit_types')->truncate();
+        DB::table('destilleries')->truncate();
+
+//        DB::delete('DELETE FROM beers');
+//        DB::delete('DELETE FROM beer_types');
+//        DB::delete('DELETE FROM breweries');
+//        DB::delete('DELETE FROM spirits');
+//        DB::delete('DELETE FROM spirit_types');
+//        DB::delete('DELETE FROM destilleries');
 
         return back()->with('success', 'Al Data slettet!');
     }
@@ -126,6 +135,7 @@ class Controller extends BaseController
 
     public function allBeerUpload() {
 
+        $this->deleteAllData();
         Excel::import(new ImportAll(), \request()->file('file'));
 
         return back()->with('success', 'Alt opdateret!');

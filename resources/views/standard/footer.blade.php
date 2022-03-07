@@ -18,4 +18,3 @@
         <p class="info-margin info-text">man-fre: 13-18</p>
     </div>
 </div>
-
