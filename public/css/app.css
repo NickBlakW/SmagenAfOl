@@ -34,7 +34,7 @@ body {
     position: relative;
 
 }
-.overlay {
+.modal-container {
     display: block;
     box-sizing: border-box;
     height: 100%;
@@ -47,7 +47,7 @@ body {
     background: #000000;
     z-index: 99998;
     opacity: 1;
-    cursor: wait;
+    /*cursor: wait;*/
 }
 .logo {
     height: 120px;
@@ -392,12 +392,12 @@ body {
     color: #1a202c;
     text-align: center;
 }
+.open {
+     display: block;
+ }
 .closed {
      display: none;
  }
-.open {
-    display: block;
-}
 .popup {
     text-align: center;
 }

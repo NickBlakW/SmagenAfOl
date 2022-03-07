@@ -13,6 +13,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
@@ -36,14 +37,13 @@ class Controller extends BaseController
             $beer = null;
         }
 
-        $popup = 'Du skal være over 18 for at se denne hjemmeside.';
+        // Cookie::queue('age_check', 'valid', 15);
 
         return view('index', [
             'botds' => $botds,
             'announcements' => $announcements,
-            'beer' => $beer,
-            'popup' => $popup
-        ])->with('ageCheck');
+            'beer' => $beer
+        ]);// ->with('ageCheck');
     }
 
     public function admin() {

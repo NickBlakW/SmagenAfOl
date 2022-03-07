@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Response;
 
 class AgeCheck
 {
@@ -17,13 +18,6 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->hasCookie('age')) {
-            return $next($request);
-        }
-
-        $response = $next($request);
-        $minutes = 15;
-
-        return $response->withCookie(cookie('age', 'confirmed', $minutes));
+        return null;
     }
 }
