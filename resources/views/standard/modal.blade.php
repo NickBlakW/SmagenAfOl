@@ -34,9 +34,15 @@
             let modal = document.getElementById("modal");
             let storage = window.localStorage;
 
+            /**
+            *   ## IMPORTANT! ##
+            *   Cookie set to expire after 10 seconds
+            *   for debugging.
+            *   # NEEDS TO BE CHANGED #
+            **/
             if (days) {
                 let date = new Date();
-                date.setTime(date.getTime() + (24 * 60 * 60 * 1000));
+                date.setTime(date.getTime() + (10 * 1000));
                 console.log(date);
                 expires = "; expires=" + date.toUTCString();
             }
@@ -55,9 +61,9 @@
 
             if (ageCookie == null) {
                 console.log('No such cookie...');
+            } else {
+                console.log(ageCookie);
             }
-
-            console.log(ageCookie);
         }
 
         /**
