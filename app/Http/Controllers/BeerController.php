@@ -6,6 +6,9 @@ use App\Imports\Beer_typeImport;
 use App\Imports\BeerImport;
 use App\Imports\BreweryImport;
 use App\Models\Beer;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,7 +18,7 @@ class BeerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function index() {
         $beers = Beer::all();
@@ -26,31 +29,10 @@ class BeerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-//    public function store(Request $request)
-//    {
-//        //
-//    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Beer  $beer
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @param Beer $beer
+     * @return Application|Factory|View
      */
     public function show(Beer $beer)
     {
@@ -67,39 +49,5 @@ class BeerController extends Controller
             'types' => $types,
             'breweries' => $breweries
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Beer  $beer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Beer $beer)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Beer  $beer
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Beer $beer)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Beer  $beer
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Beer $beer)
-    {
-        //
     }
 }

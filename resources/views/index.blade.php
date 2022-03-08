@@ -2,8 +2,6 @@
 @include('standard.head')
 
 <body>
-@include('standard.modal')
-
 <div class="total-view">
     @include('standard.header')
 
@@ -108,4 +106,5 @@
     </div>
     @include('standard.footer')
 </div>
+@include('standard.modal')
 </body>

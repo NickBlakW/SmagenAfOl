@@ -9,60 +9,6 @@ body {
     margin: 0 auto;
     padding: 20px 20px;
 }
-.main-header {
-    font-family: "Arial Black", sans-serif;
-    font-size: 36pt;
-    height: 140px;
-    border: 3px solid #203c12;
-    background-color: #dae0e5;
-    margin-top: 5px;
-    overflow: hidden;
-}
-.modal {
-     /*display: block;*/
-     position: fixed;
-     z-index: 99999;
-    top: 25%;
-    left: 25%;
-     width: 50%;
-     height: 50%;
-     overflow: auto;
-     background-color: #dae0e5;
-     border: 3px solid #203c12;
- }
-.modal-body {
-    position: relative;
-
-}
-.modal-container {
-    display: block;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    background: #000000;
-    z-index: 99998;
-    opacity: 1;
-    /*cursor: wait;*/
-}
-.logo {
-    height: 120px;
-    float:left;
-    margin-left: 20px;
-    margin-top: 10px;
-}
-.header-text {
-    text-align: center;
-    font-size: 36pt;
-    color: #203c12;
-}
-.fixed-header {
-    position: fixed;
-}
 .column {
     background-color: #dae0e5;
     border: 3px solid #203c12;
@@ -148,93 +94,8 @@ body {
     margin-right: calc(var(--bs-gutter-x)*-.5);
     margin-top: calc(var(--bs-gutter-y)*-1);
 }
-.product-box {
-    color: #3B3838;
-    font-family: "Arial Black", sans-serif;
-    font-size: 20px;
-    padding: 5px;
-}
-.product-sub {
-    display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
-}
 .grid-item {
     flex: 0 0 auto;
-}
-.card {
-    word-wrap: break-word;
-    background-clip: border-box;
-    background-color: #dae0e5;
-    border: 1px solid #203c12;
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    position: relative;
-    margin: 10px;
-}
-.ratio {
-    position: relative;
-    object-fit: fill;
-    border-radius: 0.25rem;
-    height: 267px;
-    width: 267px;
-}
-.card-body {
-    flex: 1 1 auto;
-    padding: 5px;
-}
-.beer-name {
-    font-size: 15pt;
-    margin-bottom: 0.5rem;
-}
-.beer {
-    object-fit: fill;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 267px;
-    width: 267px;
-}
-.beer-text {
-    font-family: Monaco, sans-serif;
-    font-size: 12pt;
-}
-.option-column {
-    margin-right: auto;
-}
-.beer-title {
-    color: #3B3838;
-    font-family: "Arial Black", sans-serif;
-}
-.beer-box {
-    color: #3B3838;
-    font-family: "Arial Black", sans-serif;
-    font-size: 20px;
-    padding: 5px;
-}
-.beer-sub {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-.beer-image {
-    object-fit: fill;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 400px;
-    width: 400px;
-}
-.description {
-    padding-top: 10px;
-}
-.beer-description {
-    font-family: "Lucida Bright", sans-serif;
-    font-size: 20px;
-}
-.beer-information {
-    font-family: "Lucida Bright", sans-serif;
-    font-size: 20px;
 }
 .content {
     background: #dae0e5;
@@ -392,15 +253,6 @@ body {
     color: #1a202c;
     text-align: center;
 }
-.open {
-     display: block;
- }
-.closed {
-     display: none;
- }
-.popup {
-    text-align: center;
-}
 .extra-top {
     margin-top: 50px;
 }
@@ -421,48 +273,3 @@ body {
     color: #203c12;
     font-family: "Lucida Bright", sans-serif;
 }
-/*input[type="file"] {*/
-/*    position: absolute;*/
-/*    z-index: -1;*/
-/*    top: 10px;*/
-/*    left: 8px;*/
-/*    font-size: 17px;*/
-/*    color: #b8b8b8;*/
-/*}*/
-/*.upload {*/
-/*     position: relative;*/
-/* }*/
-/*.uploadable {*/
-/*    display: inline-block;*/
-/*    cursor: pointer;*/
-/*    background-color: forestgreen;*/
-/*    color: #1a202c;*/
-/*    font-family: "Arial Black", sans-serif;*/
-/*    font-size: 15px;*/
-/*    padding: 4px 10px 4px 10px;*/
-/*    border-radius: 6px 6px 6px 6px;*/
-/*}*/
-
-
-/*.credit {*/
-/*    */
-/*    width:75%;*/
-/*    display:flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-/*.credit-img {*/
-/*    height: 20px;*/
-/*}*/
-/*.credit-text {*/
-/*    font-family: "Arial", sans-serif;*/
-/*    font-size: 12px;*/
-/*    padding-left: 10px;*/
-/*}*/
-/*.credit-link {*/
-/*    text-decoration: none;*/
-/*    color: #dae0e5;*/
-/*}*/
-/*#clear {*/
-/*    clear:both;*/
-/*}*/

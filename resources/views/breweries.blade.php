@@ -3,8 +3,6 @@
 @include('standard.head')
 
 <body>
-@include('standard.modal')
-
 <div class="total-view">
     @include('standard.header')
 
@@ -27,7 +25,7 @@
                             </div>
                         </div>
                     @empty
-                        <h2>Der er ingen øl endnu :(</h2>
+                        <h2>Der er ingen bryggerier endnu :(</h2>
                     @endforelse
                 </div>
             </div>
@@ -35,6 +33,7 @@
     </div>
     @include('standard.footer')
 </div>
+@include('standard.modal')
 <!-- Scripts -->
 <script src="{{ asset("js/app.js") }}"></script>
 </body>
