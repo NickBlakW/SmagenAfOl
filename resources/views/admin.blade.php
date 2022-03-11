@@ -133,10 +133,18 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#pass-toggler").click(function(event) {
+            if (!$("#admin-toggle").is(":hidden")) {
+                $("#admin-toggle").toggle();
+            }
+
             $("#pass-toggle").toggle();
         });
 
         $("#admin-toggler").click(function(event) {
+            if (!$("#pass-toggle").is(":hidden")) {
+                $("#pass-toggle").toggle();
+            }
+
             $("#admin-toggle").toggle();
         })
     });

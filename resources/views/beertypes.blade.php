@@ -2,8 +2,6 @@
 @include('standard.head')
 
 <body>
-@include('standard.modal')
-
 <div class="total-view">
     @include('standard.header')
 
@@ -11,19 +9,22 @@
         @include('standard.refs')
 
         <div class="flex-item column">
-            @forelse($types as $type)
-                <a href="{{ route('beertypes.show', [$type->id]) }}">
-                    <button class="types-button" href="{{ route('beertypes.show', [$type->id]) }}">
-                        {{ $type->type }}
-                    </button><br>
-                </a>
-            @empty
+            <div class="type-grid">
+                @forelse($types as $type)
 
-            @endforelse
+                    <a href="{{ route('beertypes.show', [$type->id]) }}">
+                        <button class="types-button" href="{{ route('beertypes.show', [$type->id]) }}">
+                            {{ $type->type }}
+                        </button><br>
+                    </a>
+                @empty
+                    <h2 class="beer-title">Ingen øltyper registreret</h2>
+                @endforelse
+            </div>
         </div>
     </div>
     @include('standard.footer')
 </div>
-
+@include('standard.modal')
 <script src="{{ asset('js/app.js') }}"></script>
 </body>

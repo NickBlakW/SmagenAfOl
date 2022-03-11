@@ -10,6 +10,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
@@ -67,19 +68,11 @@ class Controller extends BaseController
         DB::table('spirit_types')->truncate();
         DB::table('destilleries')->truncate();
 
-//        DB::delete('DELETE FROM beers');
-//        DB::delete('DELETE FROM beer_types');
-//        DB::delete('DELETE FROM breweries');
-//        DB::delete('DELETE FROM spirits');
-//        DB::delete('DELETE FROM spirit_types');
-//        DB::delete('DELETE FROM destilleries');
-
         return back()->with('success', 'Al Data slettet!');
     }
 
-    public function uploadImage(Request $request)
+    public function uploadImage(Request $request): RedirectResponse
     {
-        //
         $request->validate([
             'image.*' => 'mimes:jpeg,png,jpg,gif',
         ]);
@@ -96,7 +89,9 @@ class Controller extends BaseController
         return back()->with('success', 'Billede uploadet!');
     }
 
-    public function createAnnouncement(Request $request) {
+
+    public function createAnnouncement(Request $request): RedirectResponse
+    {
         $announcement = new Announcement();
         $announcement->announcement = $request->input('announcement');
         $announcement->save();
@@ -146,11 +141,6 @@ class Controller extends BaseController
     }
 
     public function createAdmin(Request $request) {
-//        $request->validate([
-//            'admin-name' => ['required','string'],
-//            'admin-pass' => ['required','confirmed','min:6'],
-//            'admin-confirm' => ['required','min:6']
-//        ]);
 
         $user = new User();
         $user->name = $request->input('admin-name');
