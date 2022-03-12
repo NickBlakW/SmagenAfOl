@@ -1,14 +1,3 @@
-.modal {
-    position: fixed;
-    z-index: 99999;
-    top: 25%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    overflow: auto;
-    background-color: #dae0e5;
-    border: 3px solid #203c12;
-}
 .modal-body {
     position: relative;
 
@@ -23,12 +12,24 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.95);
     z-index: 99998;
-    opacity: 1;
+}
+.modal {
+    position: fixed;
+    z-index: 99999;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    background-color: #dae0e5;
+    border: 3px solid #203c12;
+	opacity: 1;
 }
 .open {
     display: block;
+	opacity: 1;
 }
 .closed {
     display: none;
