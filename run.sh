@@ -6,7 +6,8 @@
 docker-compose up -d
 
 # Let docker daemon boot up properly
-sleep 8s
+SLEEPTIME=21
+sleep $SLEEPTIME
 
 # Migrate Database
 php artisan migrate:fresh
