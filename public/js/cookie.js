@@ -19,10 +19,12 @@
         }
 
         document.cookie = name + "=" + value + expires + "; path=/";
-        storage.setItem('age_check', document.cookie);
-
-        modal.classList.remove('open');
-        modal.classList.add('closed');
+        storage.setItem(name, document.cookie);
+		
+		if (name === 'age_check') {
+			modal.classList.remove('open');
+			modal.classList.add('closed');
+		}
     }
 
     // read from cookie * return null if not present *
@@ -51,7 +53,7 @@
 
         if (ageCookie == null) {
             console.log('No cookie saved');
-        }
-
-        localStorage.removeItem(ageCookie);
+        } else {
+			localStorage.removeItem(ageCookie);
+		}
     }
