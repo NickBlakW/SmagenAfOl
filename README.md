@@ -19,10 +19,11 @@ for MySQL and composer.
 
 #### PHP and Laravel
 1. Clone the repository locally.
-2. Run `composer install` to install php dependencies.
-3. Create copy of env.example file called .env. Use command `cp .env.example .env`
-4. Run `php artisan key:generate` to generate random encryption key.
-5. Run `php artisan serve` to boot application.
+2. Run `composer require "ext-gd:*" --ignore-platform-reqs` to ignore gd-requirement
+3. Run `composer install` to install php dependencies.
+4. Create copy of env.example file called .env. Use command `cp .env.example .env`
+5. Run `php artisan key:generate` to generate random encryption key.
+6. Run `php artisan serve` to boot application.
 
 #### Docker + database
 In the `.env`-file change the variables as follows.
