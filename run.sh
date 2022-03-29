@@ -6,11 +6,14 @@
 docker-compose up -d
 
 # Let docker daemon boot up properly
-SLEEPTIME=21
-sleep $SLEEPTIME
+#SLEEPTIME=21
+#sleep $SLEEPTIME
 
 # Migrate Database
 php artisan migrate:fresh
+
+# Open default browser on localhost:8000
+open http://localhost:8000
 
 # Serve website
 php artisan serve
