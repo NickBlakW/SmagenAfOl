@@ -62,7 +62,6 @@ class Controller extends BaseController
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
         DB::table('beers')->truncate();
-        DB::table('beer_types')->truncate();
         DB::table('breweries')->truncate();
         DB::table('spirits')->truncate();
         DB::table('spirit_types')->truncate();
