@@ -64,7 +64,6 @@ class Controller extends BaseController
         DB::table('beers')->truncate();
         DB::table('breweries')->truncate();
         DB::table('spirits')->truncate();
-        DB::table('spirit_types')->truncate();
         DB::table('destilleries')->truncate();
 
         return back()->with('success', 'Al Data slettet!');
