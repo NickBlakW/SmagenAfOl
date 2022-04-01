@@ -15,6 +15,7 @@
     </div>
     @include('standard.footer')
 </div>
+@include('standard.modal')
 
 <!-- Scripts -->
 <script src="{{ asset("js/app.js") }}"></script>

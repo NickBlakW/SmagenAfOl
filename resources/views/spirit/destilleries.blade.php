@@ -32,5 +32,6 @@
             </div>
             @include('standard.footer')
         </div>
+    @include('standard.modal')
     </body>
 </html>

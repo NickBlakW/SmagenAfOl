@@ -40,7 +40,7 @@ class SpiritController extends Controller
         $destillery = $spirit->destillery;
 
         $types = DB::select(
-            'SELECT * FROM spirit_types
+            'SELECT DISTINCT type FROM spirits
             WHERE type=?', [$type]
         );
 
