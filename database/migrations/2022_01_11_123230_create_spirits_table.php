@@ -24,7 +24,6 @@ class CreateSpiritsTable extends Migration
             $table->string('image')->nullable();
             $table->timestamps();
 
-            $table->foreign('type')->references('type')->on('spirit_types');
             $table->foreign('destillery')->references('name')->on('destilleries');
         });
     }

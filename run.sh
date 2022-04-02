@@ -10,7 +10,7 @@ docker-compose up -d
 #sleep $SLEEPTIME
 
 # Migrate Database
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 
 # Open default browser on localhost:8000
 open http://localhost:8000
