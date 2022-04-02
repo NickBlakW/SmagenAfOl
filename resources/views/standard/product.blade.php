@@ -16,7 +16,11 @@
                         <a class="option-link option" href="{{ route('beer.show', [$beer->id]) }}">
                             <p class="beer-name beer-title">{{ $beer->name }}</p>
                         </a>
-                        <p class="beer-text">{{ $beer->description }}</p>
+                        @if ($beer->description != null)
+                            <p class="beer-text">{{ $beer->description }}</p>
+                            @else
+                            <p class="beer-text">Ingen beskrivelse</p>
+                        @endif
                     </div>
                     <div>
                         <a href="{{ route('beer.show', [$beer->id]) }}">
