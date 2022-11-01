@@ -47,6 +47,10 @@ class Controller extends BaseController
         ]);// ->with('ageCheck');
     }
 
+    /*
+     * Controls for the admin to edit data
+     *
+     */
     public function admin() {
         $beers = DB::select(
             'SELECT * FROM beers
@@ -58,6 +62,10 @@ class Controller extends BaseController
         ]);
     }
 
+    /*
+     * Clearing the data in the database
+     *
+     */
     public function deleteAllData() {
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
@@ -69,6 +77,10 @@ class Controller extends BaseController
         return back()->with('success', 'Al Data slettet!');
     }
 
+    /*
+     * Upload an image directly to public/images
+     *
+     */
     public function uploadImage(Request $request): RedirectResponse
     {
         $request->validate([
@@ -87,7 +99,10 @@ class Controller extends BaseController
         return back()->with('success', 'Billede uploadet!');
     }
 
-
+    /*
+     * Announcement creator for front-page
+     *
+     */
     public function createAnnouncement(Request $request): RedirectResponse
     {
         $announcement = new Announcement();
@@ -97,6 +112,10 @@ class Controller extends BaseController
         return back()->with('success', 'Nyhed uploadet!');
     }
 
+    /*
+     * Reset and remove "Beer of the day"
+     *
+     */
     public function reset_botd() {
         DB::update(
             'UPDATE beers SET beer_of_the_day=0
@@ -106,6 +125,10 @@ class Controller extends BaseController
         return back()->with('success', 'Dagens øl fjernet');
     }
 
+    /*
+     * Set "Beer of the day"
+     *
+     */
     public function set_botd(Request $request) {
         $botd = $request->input('botd');
 
@@ -116,6 +139,10 @@ class Controller extends BaseController
         return back()->with('success', 'Dagens øl er nu: '.$botd);
     }
 
+    /*
+     * Populate dropdown menu for setting "Beer of the day"
+     *
+     */
     public function dropdown_botd(Request $request) {
         $botd = $request->input('drop');
 
@@ -126,6 +153,10 @@ class Controller extends BaseController
         return back()->with('success', 'Dagens øl er nu: '.$botd);
     }
 
+    /*
+     * Upload data (beer / spirits) to database
+     * First reset database to avoid conflicts
+     */
     public function allBeerUpload() {
 
         $this->deleteAllData();
@@ -134,10 +165,18 @@ class Controller extends BaseController
         return back()->with('success', 'Alt opdateret!');
     }
 
+    /*
+     * Go to login page
+     *
+     */
     public function toLogin() {
         return view('standard.login');
     }
 
+    /*
+     * Function to create new admin if necessary
+     *
+     */
     public function createAdmin(Request $request) {
 
         $user = new User();
@@ -148,6 +187,10 @@ class Controller extends BaseController
         return back()->with('success', $user->name.' oprettet!');
     }
 
+    /*
+     * Check if login is valid
+     * Only log in if user is authorized
+     */
     public function login(Request $request) {
         $name = $request->input('name');
         $password = $request->input('password');
@@ -162,6 +205,10 @@ class Controller extends BaseController
         return back()->with('login-error', 'Kunne ikke logge ind');
     }
 
+    /*
+     * Change password for an admin
+     *
+     */
     public function changePassword(Request $request) {
         $id = $request->user()->id;
 
@@ -172,6 +219,10 @@ class Controller extends BaseController
         return back()->with('success', 'Password opdateret!');
     }
 
+    /*
+     * Logout function
+     *
+     */
     public function logout() {
         return redirect()->route('login')->with(Auth::logout());
     }

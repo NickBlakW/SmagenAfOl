@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beer;
-use App\Models\Beer_type;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -28,7 +26,6 @@ class BeerTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Beer_type $type
      * @return Application|Factory|View
      */
     public function show(string $type)
