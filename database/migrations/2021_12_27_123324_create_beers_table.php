@@ -16,16 +16,15 @@ class CreateBeersTable extends Migration
         Schema::create('beers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('type');
             $table->string('brewery');
             $table->double('alc_percent');
-            $table->integer('ibu')->unsigned()->nullable();
+            $table->float('ibu')->unsigned()->nullable();
             $table->integer('size');
             $table->string('image')->nullable();
             $table->boolean('beer_of_the_day')->default(0);
 
-            $table->foreign('type')->references('type')->on('beer_types');
             $table->foreign('brewery')->references('name')->on('breweries');
 
             $table->timestamps();

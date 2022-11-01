@@ -20,10 +20,6 @@ class Beer extends Model
         'image',
     ];
 
-    public function hasType() {
-        return $this->hasOne(Beer_type::class, 'type');
-    }
-
     public function brewery() {
         return $this->belongsTo(Brewery::class, 'brewery');
     }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Beer_type;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -17,7 +16,7 @@ class BeerTypeController extends Controller
      */
     public function index(): View|Factory|Application
     {
-        $types = DB::select('SELECT * FROM beer_types');
+        $types = DB::select('SELECT distinct type FROM beers');
 
         return view('beertypes', [
             'types' => $types
@@ -27,13 +26,13 @@ class BeerTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Beer_type $type
      * @return Application|Factory|View
      */
-    public function show(Beer_type $type)
+    public function show(string $type)
     {
+
         $beers = DB::select(
-            'SELECT * FROM beers WHERE type=?', [$type->type]
+            'SELECT * FROM beers WHERE type=?', [$type]
         );
 
         return view('beertype', [

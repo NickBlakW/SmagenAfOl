@@ -12,8 +12,8 @@
             <div class="type-grid">
                 @forelse($types as $type)
 
-                    <a href="{{ route('beertypes.show', [$type->id]) }}">
-                        <button class="types-button" href="{{ route('beertypes.show', [$type->id]) }}">
+                    <a href="{{ route('beertypes.show', [$type->type]) }}">
+                        <button class="types-button" {{--href="{{ route('beertypes.show', [$type->type]) }}"--}}>
                             {{ $type->type }}
                         </button><br>
                     </a>

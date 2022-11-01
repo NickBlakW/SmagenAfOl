@@ -18,7 +18,11 @@
 
                     <div class="">
                         <div class="description">
-                            <p>{{ $brewery->description }}</p>
+                            @if ($brewery->description != null)
+                                <p>{{ $brewery->description }}</p>
+                            @else
+                                <p>Ingen beskrivelse</p>
+                            @endif
                         </div>
 
                     </div>

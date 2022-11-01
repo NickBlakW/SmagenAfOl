@@ -8,7 +8,7 @@ rem 	Allow docker daemon to initialize properly;
 timeout 8
 
 rem 	Init tables in Database
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 
 rem		Open browser to localhost
 start "" http://localhost:8000

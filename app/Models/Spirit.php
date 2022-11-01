@@ -19,10 +19,6 @@ class Spirit extends Model
         'image'
     ];
 
-    public function type() {
-        return $this->hasOne(SpiritType::class, 'type');
-    }
-
     public function destillery() {
         return $this->belongsTo(Destillery::class, 'destillery');
     }
